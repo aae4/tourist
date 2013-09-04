@@ -1,0 +1,28 @@
+<div id='gallery'>
+    <a href="assets/messages_new_recipients.png">
+        <img src="assets/messages_new_recipients.png" alt="photo1 title">
+    </a>
+    <a href="assets/show_group.png">
+        <img src="assets/show_group.png" alt="photo2 title">
+    </a>
+</div>
+<script>
+    // applying photobox on a `gallery` element which has lots of thumbnails links. Passing options object as well:
+    //-----------------------------------------------
+    $('#gallery').photobox('a',{ time:0 });
+
+    // using a callback and a fancier selector
+    //----------------------------------------------
+    $('#gallery').photobox('li > a.family',{ time:0 }), callback);
+    function callback(){
+       console.log('image has been loaded');
+    }
+
+    // destroy the plugin on a certain gallery:
+    //-----------------------------------------------
+    $('#gallery').data('_photobox').destroy();
+
+    // re-initialize the photbox DOM (does what Document ready does)
+    //-----------------------------------------------
+    $('#gallery').photobox('prepareDOM');
+</script>
