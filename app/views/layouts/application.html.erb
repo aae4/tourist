@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="flash_container"><%= render 'layouts/flash_messages' %></div>
-<%= yield %>
-
+	<div class="main-bar span12">
+		<%= render :partial => "layouts/navbar" %>
+	</div>
+	<div id="flash_container"><%= render 'layouts/flash_messages' %></div>
+	<div class="container span12">
+		<%= yield %>
+	</div>
 </body>
 </html>

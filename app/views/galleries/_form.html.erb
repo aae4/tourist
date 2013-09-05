@@ -1,0 +1,16 @@
+<%= form_for @gallery do |f| %>
+  <% if @gallery.errors.any? %>
+  	<ul>
+    	<% @gallery.errors.full_messages.each do |msg| %>
+      	<li><%= msg %></li>
+    	<% end %>
+  	</ul>
+	<% end %>
+
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

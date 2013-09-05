@@ -9,5 +9,19 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.fileupload-ui
  *= require_tree .
  */
+
+.navbar{
+	margin-bottom:100px !important;
+	margin-left:20px !important;
+}
+
+.navbar .nav{
+	margin-top:20px !important;
+}
+
+.navbar .nav a{
+	color: white !important;
+}

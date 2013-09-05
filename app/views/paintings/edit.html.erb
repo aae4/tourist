@@ -1,0 +1,29 @@
+<%= "Edit Painting" %>
+
+<%= form_for @painting, :html => {:multipart => true} do |f| %>
+  <% if @painting.errors.any? %>
+    <ul>
+      <% @painting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.hidden_field :gallery_id %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= image_tag @painting.image_url(:thumb) if @painting.image? %>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
+<p><%= link_to "Back to Gallery", @painting.gallery %></p>

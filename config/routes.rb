@@ -1,6 +1,14 @@
 Tourist::Application.routes.draw do
+  get "paintings/index"
+  get "paintings/new"
+  get "paintings/edit"
+  get "galleries/index"
+  get "galleries/new"
+  get "galleries/edit"
   devise_for :users
   resources :home
+  resources :galleries
+  resources :paintings
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

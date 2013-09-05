@@ -35,6 +35,12 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'devise'
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+gem 'simple_form'
+gem 'carrierwave'
+gem 'rmagick'
+gem "jquery-fileupload-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  sign_out: Sign out
+  sign_in: Sign In

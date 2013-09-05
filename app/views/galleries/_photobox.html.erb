@@ -1,0 +1,26 @@
+<div id='gallery'>
+  <ul id="gallery">
+  	<% for painting in @gallery.paintings %>
+  		<li class="loaded"><a href="<%= painting.image.url %>"><img src="<%= painting.image.url %>" alt="photo1 title"></a></li>
+  	<% end %>
+  </ul>
+</div>
+<script>
+    // applying photobox on a `gallery` element which has lots of thumbnails links. Passing options object as well:
+    //-----------------------------------------------
+    $('#gallery').photobox('a',{ time:0 });
+
+    // using a callback and a fancier selector
+    //----------------------------------------------
+    $('#gallery').photobox(('li > a.family',{ time:0 }), callback);
+    function callback(){
+       console.log('image has been loaded');
+    }
+
+    // destroy the plugin on a certain gallery:
+    //-----------------------------------------------
+
+    // re-initialize the photbox DOM (does what Document ready does)
+    //-----------------------------------------------
+    $('#gallery').photobox('prepareDOM');
+</script>
