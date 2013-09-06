@@ -145,3 +145,14 @@
 @media all and (max-width:710px){
 	#pbCaption .pbThumbs li.active a img{ min-height:96%; }
 }
+
+#pbOverlay .imageWrap img, #pbOverlay.hide .imageWrap img.prepare{ 
+	transform:rotateX(90deg); 
+	-webkit-transform:rotateX(90deg); 
+	-ms-transform:rotateX(90deg); 
+}
+#pbOverlay.hide .imageWrap img{
+ transform:rotateX(-90deg);
+ -webkit-transform:rotateX(-90deg);
+ transform:none\9; opacity:.6; 
+}

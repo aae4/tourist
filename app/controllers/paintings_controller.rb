@@ -49,11 +49,15 @@ class PaintingsController < ApplicationController
     end
   end
 
+
   def destroy
     @painting = Painting.find(params[:id])
     @painting.destroy
     flash[:notice] = "Successfully destroyed painting."
-    redirect_to @painting.gallery
+    respond_to do |format|
+      format.html { redirect_to galleries_url }
+      format.json { head :no_content }
+    end
   end
 
   private

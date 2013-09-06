@@ -10,7 +10,7 @@ class Painting < ActiveRecord::Base
       "size" => image.size,
       "url" => image.url,
       "thumbnail_url" => image.thumb.url,
-      "delete_url" => gallery_path(:id => gallery_id),
+      "delete_url" => painting_path(:id => id),
       "delete_type" => "DELETE" 
     }
   end

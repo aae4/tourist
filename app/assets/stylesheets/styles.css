@@ -39,7 +39,12 @@ a{ text-decoration:none; }
 		.main footer a::after{ content:'\203A'; font-size:2em; line-height:0.8; margin-left:-10px; display:inline-block; vertical-align:top; opacity:0; pointer-events:none; -webkit-transition:0.15s ease-out; -ms-transition:0.15s; transition:0.15s ease-out; }
 		.main footer a:hover::after{ opacity:1; margin-left:5px; }
 		
-#gallery{width:60%; }
+#gallery{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	width: 98%;
+}
 	#gallery li{ list-style:none; perspective:100px; -webkit-perspective:100px; margin:1px; float:right; position:relative; transition:.1s; -webkit-transition:0.1s; }
 		#gallery li.video::before{ content:'\25BA'; color:#FFF; font-size:20px; height:20px; width:20px; line-height:0.9; position:absolute; bottom:3px; left:4px; z-index:1; background:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(0,0,0,0.4); border-radius:0 3px 0 0; pointer-events:none; opacity:0; transition:.5s 0.2s; }
 		#gallery li.loaded.video::before{ opacity:1; }
