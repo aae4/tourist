@@ -1,5 +1,8 @@
-<%= "New Painting" %>
+<div class="gallery-header">
+  <div class="title">
+  	<%= link_to "<- Back to Gallery", @painting.gallery, :class => "btn btn-danger" %>
+		<p class="pull-right">New Painting</p>
+  </div>
+</div>
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to Gallery", @painting.gallery %></p>
