@@ -1,10 +1,16 @@
 class GalleriesController < ApplicationController
+	respond_to :html, :js
+
   def index
     @galleries = Gallery.all
   end
 
   def show
     @gallery = Gallery.find(params[:id])
+    respond_to do |format|
+    	format.html
+    	format.js
+    end
   end
 
   def new

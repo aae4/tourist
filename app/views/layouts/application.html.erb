@@ -2,17 +2,49 @@
 <html>
 <head>
   <title>Tourist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="main-bar span12">
-		<%= render :partial => "layouts/navbar" %>
-	</div>
+	<%= render :partial => "layouts/navbar" %>
 	<div id="flash_container"><%= render 'layouts/flash_messages' %></div>
-	<div class="container span12">
-		<%= yield %>
-	</div>
+	<div class="container-fluid">
+	  <div class="row-fluid">
+
+	    <div class="span3">
+	      <div class="well sidebar-nav">
+	        <ul class="nav nav-list">
+	          <li class="nav-header">Tourist</li>
+	          <li class="active"><a href="#">Who we are?</a></li>
+	          <li><a href="#">What we are doing?</a></li>
+	          <li><a href="#">Why we doing it?</a></li>
+	          <li><a href="#">JavaScript</a></li>
+					  <li><a href="#">We in socials</a></li>
+					  <li><a href="#">Bubble GUm</a></li>
+	          <li class="nav-header">Additional</li>
+	          <li><a href="#">About us</a></li>
+	          <li><a href="#">Contacts</a></li>
+	          <li><a href="#">Personal</a></li>
+	          <li><a href="#">Achievments</a></li>
+	          <li><a href="#">YEAH!</a></li>
+	       </ul>
+	      </div><!--/.well -->
+	    </div><!--/span-->
+
+	    <div class="span9">
+	    		<%= yield %>
+	    </div>
+
+	  </div>
+	 	<div class="row-fluid">
+			<hr>
+		 	<footer>
+		   	<p>&copy; Company 2012</p>
+		  </footer>
+	  </div>
+	</div><!--/.fluid-container-->
+
 </body>
 </html>

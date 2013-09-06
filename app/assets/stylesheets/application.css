@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-.navbar{
+/*.navbar{
 	margin-bottom:100px !important;
 	margin-left:20px !important;
 }
@@ -24,4 +24,21 @@
 
 .navbar .nav a{
 	color: white !important;
+}*/
+.navbar-inner{
+	background-color: rgba(250, 250, 250, 0) !important;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f2f2f2) !important;
+}
+.navbar .brand {
+	float: right !important;
+}
+
+.alert-success {
+	background-color: rgba(119, 229, 74, 0.43) !important;
+	border-color: #d6e9c6 !important;
+	color: rgba(11, 255, 15, 0.34) !important;
+}
+
+.alert-success h4 {
+	color: black !important;
 }

@@ -7,7 +7,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :fog
+
+  include CarrierWave::MimeTypes
+  process :set_content_type
   # storage :s3
 
   # Override the directory where uploaded files will be stored.

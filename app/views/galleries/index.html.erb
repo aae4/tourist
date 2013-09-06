@@ -1,10 +1,16 @@
-<%= "Galleries" %>
-
-<% for gallery in @galleries %>
-  <div class="gallery">
-    <h2><%= link_to gallery.name, gallery %></h2>
-    Paintings: <%= gallery.paintings.size %>
+<div class="gallery-header">
+  <div class="title">
+  	<%= link_to "New Gallery", new_gallery_path, :class => "btn btn-success" %>
+		<p class="pull-right">Galleries</p>
   </div>
-<% end %>
-
-<p><%= link_to "New Gallery", new_gallery_path %></p>
+</div>
+<div id='gallery-big' class="gallery-big">
+	<ul id="gallery-big">
+		<% for gallery in @galleries %>
+  		<li class="loaded">
+  			<% url = gallery.paintings.present? ? gallery.paintings.first.image.url : "assets/bg2_bup.jpg" %>
+  			<a href="galleries/<%= gallery.id %>"><img src="<%= url %>" alt="photo1 title"></a>
+  		</li>
+		<% end %>
+	</ul>
+	</div>

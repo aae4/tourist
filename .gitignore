@@ -17,8 +17,11 @@
 capybara-*.html
 .rspec
 .rvmrc
+.ruby-version
 /vendor/bundle
 /log/*
 /tmp/*
 /public/system/*
 /spec/tmp/*
+
+/config/initializers/development_s3_env.rb
