@@ -21,6 +21,7 @@ capybara-*.html
 /vendor/bundle
 /log/*
 /tmp/*
+/public/uploads/*
 /public/system/*
 /spec/tmp/*
 

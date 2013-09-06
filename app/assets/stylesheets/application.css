@@ -25,6 +25,10 @@
 .navbar .nav a{
 	color: white !important;
 }*/
+#main-body{
+	margin-top:10px;
+}
+
 .navbar-inner{
 	background-color: rgba(250, 250, 250, 0) !important;
 	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f2f2f2) !important;

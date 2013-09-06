@@ -28,10 +28,16 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	display: table;
-	width: 100%;
+	width: 98%;
 	height: 50px;
 	background-color: rgba(57, 97, 224, 0.55);
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px
+}
+
+.gallery-font{
+	font-family:"Times New Roman", Times, serif;
+	font-style:oblique;
+	text-align: center;
 }

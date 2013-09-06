@@ -8,9 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render :partial => "layouts/navbar" %>
-	<div id="flash_container"><%= render 'layouts/flash_messages' %></div>
 	<div class="container-fluid">
+		<%= render :partial => "layouts/navbar" %>
+		<div id="flash_container"><%= render 'layouts/flash_messages' %></div>
 	  <div class="row-fluid">
 
 	    <div class="span3">
@@ -45,6 +45,5 @@
 		  </footer>
 	  </div>
 	</div><!--/.fluid-container-->
-
 </body>
 </html>
