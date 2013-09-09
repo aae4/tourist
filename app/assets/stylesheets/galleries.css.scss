@@ -10,7 +10,7 @@
   vertical-align: middle;
 }
 
-#gallery-big{width:90%;}
+#gallery-big{width:90%;margin-left: 7%;}
 	#gallery-big li{
 		list-style:none;
 		perspective:100px;
@@ -84,3 +84,14 @@
   -webkit-transform: translateY(-100%);  
   transform: translateY(-100%);  
 } 
+
+.create-gallery-form {
+	width: 410px;
+	margin: 50px auto;
+	padding: 25px;
+	background-color: rgba(250,250,250,0.5);
+	border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), 
+    			inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}

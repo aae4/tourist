@@ -7,12 +7,11 @@
   	</ul>
 	<% end %>
 
-
-  <p>
-    <%= f.label :name %><br />
+  <div class="create-gallery-form form-inline">
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
-  <p><%= f.submit %></p>
+    <%= f.submit "Create", :class => "btn btn-success pull-right" %>
+  </div>
 <% end %>
 
-<%= sketchily_tag :sketch %>
+<!--%= sketchily_tag :sketch %-->

@@ -40,16 +40,15 @@ a{ text-decoration:none; }
 		.main footer a:hover::after{ opacity:1; margin-left:5px; }
 		
 #gallery{
-	padding-left: 10px;
-	padding-right: 10px;
+	margin-left: 2.6%;
 	padding-top: 10px;
-	width: 98%;
+	width: 99%;
 }
 	#gallery li{
 		list-style:none;
 		perspective:100px;
 		-webkit-perspective:100px;
-		margin:1px;
+		margin:4px;
 		float:left;
 		position:relative;
 		transition:.1s;

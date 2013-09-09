@@ -1,11 +1,12 @@
 <div class="gallery-header">
   <div class="title row">
-    <div class="span4">
-    <%= link_to "Add a Painting", new_painting_path(:gallery_id => @gallery), :class => "btn btn-success" %>
-    <%= link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %>
+    <div class="span2">
+      <%= link_to "<- Galleries", galleries_path, :class => "btn pull-left" %>
+    <!--%= link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %-->
     </div>
-    <div class="span5 gallery-font"><%= @gallery.name %></div>
-    <div class="span2 pull-right"><%= link_to "View Galleries", galleries_path, :class => "btn pull-right" %></div>
+    <div class="span6 gallery-font"><%= @gallery.name %></div>
+    <div class="span2"><%= link_to "x Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></div>
+    <div class="span2 pull-right"><%= link_to "Add a Painting", new_painting_path(:gallery_id => @gallery), :class => "btn btn-success pull-right" %></div>
   </div>
 </div>
 
@@ -23,6 +24,7 @@
   <%= render :partial => "photobox", :locals => {:gallery => @gallery} %>
   <div class="clear"></div>
 </div>
+
 <script>
     // applying photobox on a `gallery` element which has lots of thumbnails links. Passing options object as well:
     //-----------------------------------------------

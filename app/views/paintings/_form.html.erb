@@ -1,20 +1,10 @@
-<!--% if @painting.errors.any? %-->
-  <!--ul-->
-    <!--% @painting.errors.full_messages.each do |msg| %-->
-      <!--li--><!--%= msg %--><!--/li-->
-    <!--% end %-->
-  <!--/ul-->
-<!--% end %-->
 
-<div class="container">
   <%= form_for  @painting, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <div class="row fileupload-buttonbar">
       <div class="span7">
-        <!-- The fileinput-button span is used to style the file input field as button -->
-
         <%= f.hidden_field :gallery_id %>
-
+        <!-- The fileinput-button span is used to style the file input field as button -->
         <span class="btn btn-success fileinput-button">
           <i class="icon-plus icon-white"></i>
           <span>Add files...</span>
@@ -49,7 +39,6 @@
     </table>
   <% end %>
 
-</div>
 <script>
   var fileUploadErrors = {
   maxFileSize: 'File is too big',

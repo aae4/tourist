@@ -1,5 +1,11 @@
 class PaintingsController < ApplicationController
 	def index
+    @paintings = Painting.all
+
+    respond_to do |format|
+      format.html
+      #format.json { render json: @paintings.map{|painting| painting.to_jq_upload } }
+    end
 	end
 
   def new
