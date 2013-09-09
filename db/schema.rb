@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130905103057) do
+ActiveRecord::Schema.define(version: 20130909124022) do
+
+  create_table "equipment", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "equipment_type_id"
+    t.decimal  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "equipment_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "galleries", force: true do |t|
     t.string   "name"

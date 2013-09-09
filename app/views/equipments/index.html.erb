@@ -1,0 +1,6 @@
+<% for equipment in @equipments %>
+	<li>
+		<%= equipment.name %>
+	</li>
+<% end %>
+<%= link_to "New Equipment", new_equipment_path, :class => "btn btn-success pull-right" %>
