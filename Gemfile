@@ -40,9 +40,10 @@ gem "twitter-bootstrap-rails"
 gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
-gem "jquery-fileupload-rails"
-gem "fog", "~> 1.3.1"
+gem "jquery-fileupload-rails" 
+gem "fog", "~> 1.3.1" #for sotring images in AMazon S3
 gem 'jquery-turbolinks'
+gem 'sketchily' #svg-edit plugin
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

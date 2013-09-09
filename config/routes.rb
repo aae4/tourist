@@ -5,6 +5,8 @@ Tourist::Application.routes.draw do
   get "galleries/index"
   get "galleries/new"
   get "galleries/edit"
+
+  get "home/about"
   devise_for :users
   resources :home
   resources :galleries

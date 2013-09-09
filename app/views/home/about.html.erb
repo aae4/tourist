@@ -1,0 +1,39 @@
+<div class="row">
+<div class="svg-path-menu span3">
+		<label><input type='checkbox' id='showPath'>Show SVG Path</label>
+		<br><br>
+		<button id='addWalker'>Add Another</button>
+		<div class='walkerController'>
+			<button class='delete' title='Remove This Walker Instance'>&times;</button>
+			<label>
+				<input type='checkbox'>
+				<button class='stopPlay'></button>
+			</label>
+			<label>
+				<input type='checkbox'>
+				<button class='reverse'></button>
+			</label>
+			<select>
+				<option value=''>No Easing</option>
+				<option value='Math.pow(t,3)'>easeInCubic</option>
+				<option value='1-Math.pow(1-t,3)'>easeOutCubic</option>
+				<option value='Math.pow(2,-10*t) * Math.sin((t-2/4)*(2*Math.PI)/2) + 1'>easeOutElastic</option>
+				<option value='t*t'>easeInQuad</option>
+				<option value='t*(2-t)'>easeOutQuad</option>
+				<option value='t<.5 ? 2*t*t : -1+(4-2*t)*t'>easeInOutQuad</option>
+				<option value='t<.5 ? 8*t*t*t*t : 1-8*(--t)*t*t*t'>easeInOutQuart</option>				
+			</select>
+			<br>
+			<input class='speed' type="range" min="1" max="100" step="1" value="30">
+			<span>Time (s)</span>
+			<!--<input class='speed' type='number'>-->
+		</div>
+</div>
+<div class='maze'>
+	<div class='walker'>&#9654;</div>
+	<object id='svgPath' data="path.svg" width="596" height="660" type="image/svg+xml"></object>
+</div>
+</div>
+
+<%= javascript_include_tag "pathAnimator" %>
+<%= javascript_include_tag "main" %>
