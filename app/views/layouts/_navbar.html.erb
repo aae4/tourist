@@ -8,9 +8,9 @@
       </button>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/home/about">About</a></li>
-          <li><a href="/galleries">Galleries</a></li>
+          <li class="active"><%= link_to "Home", root_path%></li>
+          <li><%= link_to "Gallery", galleries_index_path %></li>
+          <li><%= link_to "Equipment", equipment_index_path %></li>
         </ul>
         <p class="navbar-text pull-right">
             <% if user_signed_in? %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909124022) do
+ActiveRecord::Schema.define(version: 20130910092220) do
 
   create_table "equipment", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130909124022) do
     t.decimal  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "equipment_type_name"
   end
 
   create_table "equipment_types", force: true do |t|

@@ -1,0 +1,20 @@
+<div class="white-form">
+  <div  class="form-inline">
+  	<%= @equipment_type.name %>
+  </div>
+
+  <ul>
+  	<% for equip in @equipment_type.equipment do %>
+  		<li><%= equip.name %></li>
+  	<% end %>
+  </ul>
+
+  <div class="form-inline">
+    <%= link_to "Edit", edit_equipment_type_path, :class => "btn btn-success pull-right"%>
+    <%= link_to "Equipment list", equipment_types_path, :class => "btn" %>
+    <%= link_to "x Remove Equipment", @equipment_type, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %>
+  </div>
+
+  <div>
+  </div>
+</div>

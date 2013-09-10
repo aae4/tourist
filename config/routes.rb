@@ -5,12 +5,15 @@ Tourist::Application.routes.draw do
   get "galleries/index"
   get "galleries/new"
   get "galleries/edit"
-  get "equipments/index"
 
   get "home/about"
+
+  get "equipment_types/suggestions"
+
   devise_for :users
   resources :home
-  resources :equipments
+  resources :equipment
+  resources :equipment_types
   resources :galleries
   resources :paintings
   # The priority is based upon order of creation: first created -> highest priority.

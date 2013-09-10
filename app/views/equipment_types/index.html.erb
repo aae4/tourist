@@ -1,0 +1,17 @@
+<div class="gallery-header">
+  <div class="title">
+  	<%= link_to "New equipment type", new_equipment_type_path, :class => "btn btn-success pull-right" %>
+		<p class="pull-left gallery-font">Equipment types list</p>
+  </div>
+</div>
+<div class="white-form">
+	<div class="input-append ">
+		<%= text_field_tag :equipment_type, "", :class => "span12 equipment_type_select" %>
+		<a class="show_all_suggests btn" >Show all</a>
+	</div>
+	<% for equipment_type in @equipment_types %>
+		<li>
+			<%= link_to equipment_type.name, equipment_type %>
+		</li>
+	<% end %>
+</div>

@@ -1,3 +1,4 @@
 class Equipment < ActiveRecord::Base
-	has_one :equipment_type
+	belongs_to :equipment_type
+	validates_presence_of :name
 end

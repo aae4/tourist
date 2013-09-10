@@ -1,0 +1,38 @@
+<%= simple_form_for @equipment do |f| %>
+  <% if @equipment.errors.any? %>
+  	<ul>
+    	<% @equipment.errors.full_messages.each do |msg| %>
+      	<li><%= msg %></li>
+    	<% end %>
+  	</ul>
+	<% end %>
+
+  <div class="white-form">
+
+    <div class="form-inline input-append">
+      <%= f.hidden_field :equipment_type_id %>
+
+      <%= f.input :equipment_type_name, :wrapper => :prepend, :label => false, :class => "span10" do %>
+        <%= f.input_field :equipment_type_name, placeholder: "input equipment type", :class => "equipment_type_select" %>
+        <a class="show_all_suggests btn" >Show all</a>
+      <% end %>
+    </div>
+
+    <div class="form-inline">
+      <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>
+    </div>
+
+    <div class="form-inline">
+      <%= f.input :description, label: false, as: :text, :placeholder => " description", input_html: { class: 'span10', :rows => 10 } %>
+    </div>
+
+    <div class="form-inline">
+      <%= f.input :weight, as: :decimal, label: false, input_html: { class: 'span10' } %>
+    </div>
+
+    <div class="form-inline">
+      <%= f.submit "Create", :class => "btn btn-success pull-right"%>
+      <%= link_to "Equipment list", equipment_index_path, :class => "btn" %>
+    </div>
+  </div>
+<% end %>

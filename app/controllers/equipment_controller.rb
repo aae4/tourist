@@ -1,8 +1,8 @@
-class EquipmentsController < ApplicationController
+class EquipmentController < ApplicationController
 	respond_to :html, :js
 
 	def index
-		@equipments = Equipment.all
+		@equipment = Equipment.all
 	end
 
 	def new
@@ -45,11 +45,11 @@ class EquipmentsController < ApplicationController
     @equipment = Equipment.find(params[:id])
     @equipment.destroy
     flash[:notice] = "Successfully destroyed equipment."
-    redirect_to equipments_url
+    redirect_to equipment_index_path
   end
 
   private
     def equipment_params
-      params.require(:equipment).permit(:name, :description, :equipment_type_id, :weight)
+      params.require(:equipment).permit(:name, :description, :equipment_type_id, :equipment_type_name, :weight)
     end
 end

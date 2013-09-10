@@ -9,9 +9,9 @@
 		<% for gallery in @galleries %>
   		<li class="loaded">
   			<% url = gallery.paintings.present? ? gallery.paintings.first.image.url : "assets/bg2_bup.jpg" %>
-  			<a href="galleries/<%= gallery.id %>"><img src="<%= url %>" alt="photo1 title">
+  			<a href="<%= gallery.id %>"><img src="<%= url %>" alt="photo1 title">
   				<span class="caption simple-caption"><p><%= gallery.name %></p></span> </a>
   		</li>
 		<% end %>
 	</ul>
-	</div>
+</div>

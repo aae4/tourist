@@ -1,3 +1,6 @@
 class EquipmentType < ActiveRecord::Base
-	belongs_to :equipment
+	has_many :equipment
+
+	validates_uniqueness_of :name
+	validates_presence_of :name
 end

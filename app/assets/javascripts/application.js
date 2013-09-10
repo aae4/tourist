@@ -11,9 +11,22 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-fileupload
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(function () {
+   /* $( ".equipment_type_select" ).autocomplete({
+        source: "/equipment_types/suggestions",
+        highlightItem: true,
+        minLength: 0,
+        messages: {
+     	   noResults: '',
+      	 results: function() {}
+    		}
+    })*/
+});
