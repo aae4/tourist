@@ -39,6 +39,25 @@
     </table>
   <% end %>
 
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+        //Start back to top
+        jQuery(window).scroll(function() {
+            if(jQuery(this).scrollTop() != 0) {
+                jQuery('#toTop').fadeIn();
+            } else {
+                jQuery('#toTop').fadeOut();
+            }
+        });
+        jQuery('#toTop').click(function() {
+            jQuery('body,html').animate({scrollTop:0},800);
+        });
+        //End back to top
+    });
+</script>
+  
+<div id="toTop"><img src="/assets/backToTop.png" height="44" width="43" alt="Back to top" title="Back to top" /></div>
+
 <script>
   var fileUploadErrors = {
   maxFileSize: 'File is too big',

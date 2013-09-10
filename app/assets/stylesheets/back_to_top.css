@@ -1,0 +1,8 @@
+/* For back to Tp */
+#toTop{
+	position:fixed; /* this is the magic */
+	bottom:10px; /* together with this to put the div at the bottom*/
+	right:10px;
+	cursor:pointer;
+	display:none;
+	}
