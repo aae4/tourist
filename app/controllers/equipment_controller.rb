@@ -21,6 +21,13 @@ class EquipmentController < ApplicationController
     end
   end
 
+  def get_by_type
+    @equipment = EquipmentType.find(params[:type]).equipment
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
     @equipment = Equipment.new(equipment_params)
     if @equipment.save
@@ -50,6 +57,6 @@ class EquipmentController < ApplicationController
 
   private
     def equipment_params
-      params.require(:equipment).permit(:name, :description, :equipment_type_id, :equipment_type_name, :weight)
+      params.require(:equipment).permit(:name, :description, :equipment_type_id, :equipment_type_name, :weight, :image)
     end
 end

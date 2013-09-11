@@ -1,3 +1,22 @@
 // Place all the styles related to the equipments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.fileinputstyle {
+	position: relative;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+input.filestyle {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	opacity: 0;
+	z-index: 2;
+}

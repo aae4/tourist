@@ -1,42 +1,4 @@
 
-<!DOCTYPE html>
-
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		
-		<title>Sliding Tabs jQuery Plugin</title>
-		
-		<!-- Google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-		
-		<!--[if lt IE 9]>
-			<script type="text/javascript">
-				document.createElement("header");       
-				document.createElement("nav");
-			</script>
-		<![endif]-->
-		
-		<!-- Sliding Tabs CSS settings -->
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#slidingtabs").slidingTabs({ 
-					tabActive:1, 
-					responsive:true, 
-					touchSupport:true, 
-					tabsAlignment:"align_left", 
-					tabsToSlide:5, 
-					textConversion:"pb", 
-					contentEasing:"easeInOutExpo", 
-					orientation:"vertical" 
-				});
-			});
-		</script>
-		
-	</head>
-
-	<body>
 	
 		<!-- Border -->
 		<div class="black-border"></div>
@@ -344,6 +306,19 @@
 	   </div>
   	</div>
 
-	</body>
 	
-</html>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#slidingtabs").slidingTabs({ 
+					tabActive:1, 
+					responsive:true, 
+					touchSupport:true, 
+					tabsAlignment:"align_left", 
+					tabsToSlide:5, 
+					textConversion:"pb", 
+					contentEasing:"easeInOutExpo", 
+					orientation:"vertical",
+					contentAnim: "slideV"
+				});
+			});
+		</script>

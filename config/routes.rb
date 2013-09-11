@@ -10,6 +10,8 @@ Tourist::Application.routes.draw do
   get "home/slide_tabs"
 
   get "equipment_types/suggestions"
+  get "equipment/create_set"
+  get "equipment/get_by_type"
 
   devise_for :users
   resources :home

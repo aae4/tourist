@@ -166,7 +166,7 @@ $(document).ready(function () {
                 this.setTO($addBtn, 50)
             }
             length = $tabs.find("div.st_tabs_wrap ul.st_tabs_ul").children("li").length;
-            labels = ["Aliquantum", "Beneficium", "Elementum", "Eiusmod Proident", "Exercitation", "Adipisicing et Elit", "Voluptate Velit", "Sodales a Magna", "Fermentum", "Curabitur Erat", "Etiam est Semper", "Venenatis", "Aenean Lacinia", "Phasellus", "Vulputate Porta"], span = ["Elementum est fringilla augue", "Phasellus viverra nulla"];
+            labels = ["Aliquantum", "Beneficium", "Elementum"], span = ["Тестовый Спан", "Phasellus viverra nulla"];
             label = ($tabs.hasClass("clean_rounded-vertical")) ? labels[length] + "<span>" + span[0] + "</span>" : labels[(length)];
             if (length == 1) {
                 $removeBtn.removeClass("btn_disabled")

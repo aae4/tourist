@@ -22,3 +22,7 @@ $ ->
           response(data)
    	select: ( event, ui ) ->
    		$('#equipment_equipment_type_id').val(ui.item.id)
+   		$.ajax
+        url: "/equipment/get_by_type"
+        data:
+          type: ui.item.id

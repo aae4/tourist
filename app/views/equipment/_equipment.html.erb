@@ -1,0 +1,7 @@
+<ul>
+	<% for equipment in @equipment %>
+		<li><%= equipment.name %>
+			<img src="<%= equipment.image.thumb %>" alt="<%= equipment.name %>">
+		</li>
+	<% end %>
+</ul>
