@@ -7,6 +7,7 @@ Tourist::Application.routes.draw do
   get "galleries/edit"
 
   get "home/about"
+  get "home/slide_tabs"
 
   get "equipment_types/suggestions"
 

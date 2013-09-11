@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+		<title>Sliding Tabs jQuery Plugin</title>
+		
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		
+		<!--[if lt IE 9]>
+			<script type="text/javascript">
+				document.createElement("header");       
+				document.createElement("nav");
+			</script>
+		<![endif]-->
+		
+		<!-- Sliding Tabs CSS settings -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#slidingtabs").slidingTabs({ 
+					tabActive:1, 
+					responsive:true, 
+					touchSupport:true, 
+					tabsAlignment:"align_left", 
+					tabsToSlide:5, 
+					textConversion:"pb", 
+					contentEasing:"easeInOutExpo", 
+					orientation:"vertical" 
+				});
+			});
+		</script>
+		
+	</head>
+
+	<body>
+	
+		<!-- Border -->
+		<div class="black-border"></div>
+		<div class="orange-border"></div>
+	
+		
+		<!-- Preview -->
+		<div class="dark-wrapper"> 
+			<div class="inner clearfix">
+				<a name="demos"></a>
+				
+				<div id="examples">
+				
+					<div id="demo_controls">
+						<h2 id="examples_btn"><a>Vertical Tabs</a><span>&nbsp;</span></h2>
+						<ul id="demo_dropdown">
+							<div class="arrow_border">&nbsp;</div>
+							<div class="arrow">&nbsp;</div>
+							<li><a href="index.html" class="first">Horizontal Tabs</a></li>
+							<li><a href="vertical-tabs.html" class="selected">Vertical Tabs</a></li>
+							<li><a href="external-linking.html">External Linking</a></li>
+							<li><a href="tab-icons.html">Tab Icons</a></li>
+							<li><a href="nested-tabs.html" class="last">Nested Tabs</a></li>
+						</ul>
+						<ul class="demo_btns">
+							<div id="demo_btns_overlay">&nbsp;</div>
+							<li><a href="#add-tab" id="add_tab_btn" title="Add a Tab">Add a Tab</a></li>
+							<li><a href="#remove-tab" id="remove_tab_btn" title="Remove a Tab">Remove a Tab</a></li>
+							<li><a href="#settings" id="settings_btn" title="Settings">Settings</a></li>
+						</ul>
+						<ul id="demo_settings">
+							<div class="arrow_border">&nbsp;</div>
+							<div class="arrow">&nbsp;</div>
+							<li class="first title">Settings</li>
+							<li>
+								<h3>Alignment:</h3>
+								<ul>
+									<li>
+										<label>
+											<input type="radio" checked="checked" value="tl" name="tabsAlignment">
+											<em>Top/Left</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" value="br" name="tabsAlignment">
+											<em>Bottom/Right</em>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Directional Buttons:</h3>
+								<ul>
+									<li>
+										<label>
+											<input type="radio" value="click" name="buttonsFunction">
+											<em>Click Tabs</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" checked="checked" value="slide" name="buttonsFunction">
+											<em>Slide Tabs</em>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Mouse Scroll Wheel:</h3>
+								<ul>
+									<li>
+										<label>
+											<input type="radio" checked="checked" value="true" name="tabsScroll">
+											<em>Enabled</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" value="false" name="tabsScroll">
+											<em>Disabled</em>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Tabs Animation Speed:</h3>
+								<ul id="tabs_speed">
+									<li>
+										<label>
+											<input type="radio" value="600" name="tabsAnimSpeed">
+											<em>Slow</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" checked="checked" value="300" name="tabsAnimSpeed">
+											<em>Normal</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" value="200" name="tabsAnimSpeed">
+											<em>Fast</em>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Content Animation Speed:</h3>
+								<ul>
+									<li>
+										<label>
+											<input type="radio" value="900" name="contentAnimSpeed">
+											<em>Slow</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" checked="checked" value="600" name="contentAnimSpeed">
+											<em>Normal</em>
+										</label>
+									</li>
+									<li>
+										<label>
+											<input type="radio" value="400" name="contentAnimSpeed">
+											<em>Fast</em>
+										</label>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h3>Content Animation:</h3>
+								<select class="contentAnim">
+									<option value="">(none)</option>
+									<option value="fade">fade</option>
+									<option value="fadeOutIn">fadeOutIn</option>
+									<option selected="selected" value="slideH">slideHorizontal</option>
+									<option value="slideV">slideVertical</option>
+								</select>
+							</li>
+							<li class="last"> 
+								<a id="settings_save_btn" class="btn_gray" href="#apply">Apply Settings</a> 
+							</li>
+						</ul>
+						
+					</div>
+					
+					<div id="demo">
+					
+						<!--
+						################################
+						    - Sliding Tabs / Start -
+						################################
+						-->
+						<div id="slidingtabs" class="clean_rounded clean_rounded-vertical">
+							<div class="st_tabs"> 
+								<a href="#" class="st_prev">prev</a><a href="#" class="st_next">next</a>
+								<div class="st_tabs_wrap">
+									<ul class="st_tabs_ul">
+										<li class="st_li_first st_li_active"><a href="#tab-1" rel="tab-1" class="st_tab st_tab_1 st_tab_first st_tab_active">Lorem Ipsum <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-2" rel="tab-2" class="st_tab st_tab_2">Dolor Sit Amet <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-3" rel="tab-3" class="st_tab st_tab_3">Consectetur <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-4" rel="tab-4" class="st_tab st_tab_4">Adipisicing et Elit <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-5" rel="tab-5" class="st_tab st_tab_5">Eiusmod Proident <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-6" rel="tab-6" class="st_tab st_tab_6">Exercitation <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-7" rel="tab-7" class="st_tab st_tab_7">Voluptate Velit <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-8" rel="tab-8" class="st_tab st_tab_8">Sodales a Magna <span>Elementum est fringilla augue</span></a></li>
+										<li><a href="#tab-9" rel="tab-9" class="st_tab st_tab_9">Fermentum <span>Elementum est fringilla augue</span></a></li>
+										<li class="st_li_last"><a href="#tab-10" rel="tab-10" class="st_tab st_tab_10 st_tab_last">Curabitur Erat <span>Elementum est fringilla augue</span></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="st_views">
+								<div class="tab-1 st_view st_view_first">
+									<div class="st_view_inner">
+										<h3 class="title"> Lorem Ipsum</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-2 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Dolor Sit Amet</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-3 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Consectetur</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-4 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Adipisicing et Elit</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-5 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Eiusmod Proident</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-6 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Exercitation</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-7 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Voluptate Velit</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-8 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Sodales a Magna</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-9 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Fermentum</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae <span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+								<div class="tab-10 st_view">
+									<div class="st_view_inner">
+										<h3 class="title"> Curabitur Erat</h3>
+										<p>Etiam eget mi enim, non ultricies nisi voluptatem, illo inventore veritatis et quasi architecto quasi <span class="hide_3">. vitae dicta sunt explicabo nemo. Enim voluptatem non ultricies<span class="hide_2"> dicta sunt etiam eget mi enim, non ultricies nisi voluptatem vitae dicta<span class="hide_1"> sunt explicabo. architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem non ultricies</span></span></span>.</p>
+										<blockquote>
+											<p>Aenean eu leo quam. Pellentesque ornare lacinia quam <span class="hide_2">. Venenatis ligula aperiam porta felis ornare</span>.</p>
+										</blockquote>
+										<p class="second">Sed ut perspiciatis unde omnis iste natus voluptas voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. <span class="hide_2"> Etiam eget mi enim, non ultricies nisi voluptatem.</span></p>
+										<p class="last">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis top praesentium voluptatum delen atque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae<span class="hide_2"> dicta sunt explicabo, nemo enim ipsam voluptatem quia voluptas sit asperna</span>.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--
+						##############################
+						    - Sliding Tabs / End -
+						##############################
+						-->
+						
+						<div class="spinner">&nbsp;</div>					
+					</div>
+				
+				</div>			
+			</div>
+		</div>
+		
+		<p>&nbsp;</p>
+		
+		<div class="totop">
+	   <div class="gototop">
+			<div class="arrowgototop"></div>
+	   </div>
+  	</div>
+
+	</body>
+	
+</html>
