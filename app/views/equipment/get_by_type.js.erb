@@ -1,1 +1,7 @@
 $('#equipment-form').html("<%= escape_javascript(render 'equipment') %>")
+$('#equipment-choose-form').html("<%= escape_javascript(render 'equipment_choose') %>")
+ $(function() {
+  $( "#equip-list, #sort2" ).sortable({
+    connectWith: ".connectedSortable"
+  }).disableSelection();
+});

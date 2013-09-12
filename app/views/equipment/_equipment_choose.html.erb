@@ -1,9 +1,9 @@
 <div id="equip-list">
 	<ul id="equip-list">
 		<% for equipment in @equipment %>
-			<li  class="loaded" >
+			<li  class="loaded choose-equip" >
 				<% src = equipment.image.present? ? equipment.image.url : "/assets/carabin.jpg" %>
-				<a href="<%= equipment_path(equipment) %>"><img src="<%= src %>" alt="<%= equipment.name %>"></a>
+				<a href="<%= src %>"><img src="<%= src %>" alt="<%= equipment.name %>"></a>
 				<span class="caption simple-caption"><%= equipment.name %></span></a>
 			</li>
 		<% end %>

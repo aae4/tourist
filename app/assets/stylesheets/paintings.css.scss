@@ -2,13 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
-  padding-bottom: 250px;
-}
-
 a img {
   border: none;
 }
@@ -23,14 +16,7 @@ a {
   overflow: hidden;
 }
 
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-}
+/*#container {width: 75%;margin: 0 auto; background-color: #FFF; padding: 20px 40px; border: solid 1px black; margin-top: 20px;}*/
 
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;

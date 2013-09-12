@@ -29,6 +29,15 @@ $(function () {
       	 results: function() {}
     		}
     })*/
+  $.ui.autocomplete.prototype._renderItem = function( ul, item){
+    var term = this.term.split(' ').join('|');
+    var re = new RegExp("(" + term + ")", "gi") ;
+    var t = item.label.replace(re,"<span style='font-size:16px;color:green'><b>$1</b></span>");
+    return $( "<li></li>" )
+       .data( "item.autocomplete", item )
+       .append( "<a>" + t + "</a>" )
+       .appendTo( ul );
+  }
 });
 
 

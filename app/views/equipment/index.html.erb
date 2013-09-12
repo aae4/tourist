@@ -4,10 +4,21 @@
 		<p class="pull-left gallery-font">Equipment list</p>
   </div>
 </div>
-<div class="white-form">
-	<% for equipment in @equipment %>
-		<li>
-			<%= link_to equipment.name, equipment %>
-		</li>
-	<% end %>
+<div class="white-form-big">
+	<%= simple_form_for :set, { url: equipment_create_set_path } do |f| %>
+    <div class="form-inline input-append">
+      <%= f.input :equipment_type_name, :wrapper => :prepend, :label => false, :class => "span10" do %>
+        <%= f.input_field :equipment_type_name, placeholder: "input equipment type", :class => "equipment_type_select" %>
+        <a class="show_all_suggests btn" >Show all</a>
+      <% end %>
+    </div>
+
+   	<div id="equipment-form">
+    </div>
+  <% end %>
+	<!--% for equipment in @equipment %-->
+		<!--li-->
+			<!--%= link_to equipment.name, equipment %-->
+		<!--/li-->
+	<!--% end %-->
 </div>
