@@ -8,6 +8,10 @@ $ ->
 			$( ".equipment_type_select" ).autocomplete( "search", "" );
 		else
 			$( ".equipment_type_select" ).autocomplete("close")
+    
+$ ->
+  jQuery('.equipment_type_select').click ->
+    $( ".equipment_type_select" ).autocomplete( "search", "" )
 
 $ ->
   $( ".equipment_type_select" ).autocomplete

@@ -53,7 +53,7 @@ class EquipmentTypesController < ApplicationController
   	term = Regexp.escape(params[:term] || "")
   	suggests = suggests.select("name, id").where("name ILIKE ?", "%#{term}%")#.map{|q| [q.name, q.id]}.sort
   	suggests = suggests.collect do |t|
-      { id: t.id, value: t.name }
+      { id: t.id, value: t.name + " (#{EquipmentType.find(t.id).equipment.count})" }
     end
   	render json: suggests
   end

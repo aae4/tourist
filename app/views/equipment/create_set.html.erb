@@ -1,27 +1,23 @@
-<div class="white-form-big">
+<div class="white-form-big row">
 	<%= simple_form_for :set, { url: equipment_create_set_path } do |f| %>
-	  <div class="form-inline input-append">
-	    <%= f.hidden_field :equipment_type_id %>
+		<div id="choosed-eq" class="span5 right-bar">
+		  <div class="ui-widget-content">
+		    <ul id="equip-list" class="sort2 connectedSortable">
+		      <li class="loaded placeholder"><a></a></li>
+		    </ul>
+		  </div>
+		</div>
+		<div class="span5">
+		  <div class="form-inline input-append">
+		    <%= f.hidden_field :equipment_type_id %>
 
-	    <%= f.input :equipment_type_name, :wrapper => :prepend, :label => false, :class => "span10" do %>
-	      <%= f.input_field :equipment_type_name, placeholder: "input equipment type", :class => "equipment_type_select" %>
-	      <a class="show_all_suggests btn" >Show all</a>
-	    <% end %>
-	  </div>
+		    <%= f.input :equipment_type_name, :wrapper => :prepend, :label => false, :class => "span10" do %>
+		      <%= f.input_field :equipment_type_name, placeholder: "input equipment type", :class => "equipment_type_select" %>
+		      <a class="show_all_suggests btn" >Show all</a>
+		    <% end %>
+		  </div>
 
-	  <div class="row">
-			<div id="choosed-eq" class="span5 right-bar">
-			  <h1 class="ui-widget-header">Shopping Cart</h1>
-			  <div class="ui-widget-content">
-			    <ul id="sort2" class="connectedSortable">
-			      <li class="placeholder">Add your items here</li>
-						<li>2222</li>
-			      <li>1111</li>
-			      <li>1111</li>
-			    </ul>
-			  </div>
-			</div>
-	 		<div id="equipment-choose-form" class="span5">
+	 		<div id="equipment-choose-form">
 	  	</div>
 	  </div>
 	<% end %>
