@@ -1,0 +1,14 @@
+<div class="discussion-single white-form-big">
+	<h2><%= link_to t('.discussions'), discussions_path(:walk_id => @walk.id) %></h2>
+	<% for discussion in @discussions %>
+			<div>
+				<%= link_to discussion.name, discussion_path(discussion) %><br/>
+				<% if discussion.comments.any? %>
+					<small>Last comment by: <%= discussion.comments.last.user.email %> at: <%= discussion.comments.last.created_at %></small>
+				<% else %>
+					<small>Created by: <%= discussion.user.email %> at: <%= discussion.created_at %></small>
+				<% end %>
+			</div>
+	<% end %>
+	<%= link_to "New Discussion", new_discussion_path(:walk_id => @walk.id) %>
+</div>

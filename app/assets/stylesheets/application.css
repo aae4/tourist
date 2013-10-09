@@ -34,3 +34,17 @@
 .alert-success h4 {
 	color: black !important;
 }
+
+#flip{
+	margin-right:10px;
+	width:100px;
+	height: 20px;
+	background-color: rgb(0, 184, 255);
+	vertical-align: middle;
+	text-align: center;
+	top:0;
+}
+
+.keep_spaces{
+	white-space: pre;
+}

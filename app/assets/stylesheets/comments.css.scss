@@ -1,0 +1,40 @@
+// Place all the styles related to the CommentsController controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-form{
+	margin-top:30px;
+}
+.comment-form .btn{
+	margin-top:10px;
+}
+.comment-form textarea{
+	width: 500px;
+	height: 100px;
+}
+.comment_msg > small, h4{
+	display:inline-block;
+}
+.comment_content > p{
+	word-wrap: break-word;
+	display: block;
+  width: 600px;
+}
+
+/*.comment_msg img {*/
+.mini-avatar{
+  width:70px;
+  height:70px;
+  border:3px solid #ffffff;
+  border-radius:10px
+}
+
+.comment_content{
+	width:1000px;
+}
+
+.comment_header{
+	padding-bottom:5px;
+	/*border:1px solid black;
+  border-radius:5px*/
+}

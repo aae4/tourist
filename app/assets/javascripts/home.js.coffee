@@ -4,5 +4,8 @@
 
 $ ->
 	$('.navbar a').click ->
-		$('.navbar active').removeAttr("class")
-		$(this).parent().attr("class", "active")
+		$('.navbar .active').removeClass('active')
+		$(this).parent('li').addClass('active')
+
+	$('.well a').click ->
+		$(this).parent('li').addClass('active')

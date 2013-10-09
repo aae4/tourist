@@ -8,7 +8,13 @@ $('#equipment-choose-form').html("<%= escape_javascript(render 'equipment_choose
 });
 
 
-jQuery('.choose-equip a').live('click', function(e) {
-  $('#choosed-eq ul').append("<li class='loaded'>" + $(this).parent().html() + "</li>")
+/*jQuery('#create-set-equip-list td').live('click', function(e) {
+  $('#choosed-eq ul').append("<li>" + $(this).parent().html() + "</li>")
+  $('#choosed-eq ul').append("<li>" + $(this).parent().attr("eName") + "</li>")
+  e.preventDefault();
+});*/
+
+jQuery('.choose-eq-button').live('click', function(e) {
+  $('#choosed-eq ul').append("<li>" + $(this).attr("eName") + " | "+ $(this).parent().find('input').val() +"</li>")
   e.preventDefault();
 });

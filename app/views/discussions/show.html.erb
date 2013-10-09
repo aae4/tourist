@@ -1,0 +1,9 @@
+<div class="discussion">
+	<h2><p><%= @discussion.name %></p></h2>
+	<p class="keep_spaces"><%= @discussion.text %></p>
+</div>
+<!--h2 class="comment"> Comments </h2-->
+<%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+<% if user_signed_in? %>
+	<%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
+<% end %>

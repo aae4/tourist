@@ -1,0 +1,8 @@
+<div class="walks white-form-big">
+	<% for walk in @walks %>
+		<div>
+			<h3><%= link_to walk.name, walk_path(walk) %></h3>
+		</div>
+	<% end %>
+</div>
+<%= link_to "New Walk", new_walk_path %>

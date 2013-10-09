@@ -1,15 +1,16 @@
  body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-	  .nav li {
-	  padding-top: 5px;
-	  }
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.nav li {
+  padding-top: 5px;
+}
 	  
-	  .sidebar-nav {
-        padding: 9px 0;
-      }
-	  .leaderboard {
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.leaderboard {
   padding: 60px;
   margin-bottom: 30px;
   background-image: url('/assets/gridbg.gif');
@@ -18,6 +19,7 @@
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+
 .leaderboard h1 {
   font-size: 40px;
   margin-bottom: 5px;
@@ -25,6 +27,7 @@
   letter-spacing: -1px;
   color:#FF6600;
 }
+
 .leaderboard p {
   font-size: 18px;
   font-weight: 200;
@@ -40,6 +43,6 @@ background-image: url('/assets/gridbg.gif');
 }
 
 .nav .nav-header {
-font-size: 18px;
-color:#FF9900;
+  font-size: 18px;
+  color:#FF9900;
 }

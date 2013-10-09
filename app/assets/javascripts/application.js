@@ -46,9 +46,37 @@ function readURL(input) {
     var reader = new FileReader();
 
     reader.onload = function (e) {
-      $('#img_prev').attr('src', e.target.result).width(150).height(150);
+      $('#img_prev').attr('src', e.target.result)//.width(150).height(150);
     };
 
     reader.readAsDataURL(input.files[0]);
   }
 }
+
+$(function () {
+  $('#avatar-upload-button').on('click', function (e) {
+      $('#user_avatar').click();
+      e.preventDefault();
+  });
+});
+
+/*$(document).ready(function(){
+  $('.navbar a').click(function (e) {
+    $('.navbar .active').removeClass('active')
+    $(this).parent('li').addClass('active')
+  })
+});*/
+
+$(document).ready(function () {
+  var url = window.location;
+  $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+  $('ul.nav a').filter(function() {
+       return this.href == url;
+  }).parent().addClass('active');
+});
+
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#main-left-bar").slideToggle("slow");
+  });
+});

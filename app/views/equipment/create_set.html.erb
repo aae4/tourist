@@ -1,13 +1,6 @@
 <div class="white-form-big row">
 	<%= simple_form_for :set, { url: equipment_create_set_path } do |f| %>
-		<div id="choosed-eq" class="span5 right-bar">
-		  <div class="ui-widget-content">
-		    <ul id="equip-list" class="sort2 connectedSortable">
-		      <li class="loaded placeholder"><a></a></li>
-		    </ul>
-		  </div>
-		</div>
-		<div class="span5">
+		<div class="">
 		  <div class="form-inline input-append">
 		    <%= f.hidden_field :equipment_type_id %>
 
@@ -17,7 +10,20 @@
 		    <% end %>
 		  </div>
 
-	 		<div id="equipment-choose-form">
+		  <div>
+  			<div id="choosed-eq" class="span5 right-bar">
+				  <!--div class="ui-widget-content">
+				    <ul id="equip-list" class="sort2 connectedSortable">
+				      <li class="loaded placeholder"><a></a></li>
+				    </ul>
+				  </div-->
+				  <ul>
+				  	<li></li>
+				  </ul>
+				</div>
+
+	 			<div id="equipment-choose-form">
+	  		</div>
 	  	</div>
 	  </div>
 	<% end %>

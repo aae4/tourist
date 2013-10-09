@@ -17,7 +17,16 @@ legend{color:#000}
 #yui3-css-stamp.cssreset{display:none}
 
 html{ height:100%; overflow-y:scroll; }
-body{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; box-shadow:0 0 0 10px rgba(255,255,255,0.1) inset; min-height:100%; padding:0; background:url('bg2.jpg') 50% 50% fixed no-repeat; background-size:cover; -webkit-background-size:100% 100%; -webkit-animation:8s bg forwards ease; }
+body{ 
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; 
+	box-shadow:0 0 0 10px rgba(255,255,255,0.1) inset; 
+	min-height:100%; 
+	padding:0; 
+	/*background:url('bg2.jpg') 50% 50% fixed no-repeat; */
+	background-size:cover; 
+	/*-webkit-background-size:100% 100%; 
+	-webkit-animation:8s bg forwards ease; */
+}
 
 @-webkit-keyframes bg{ 
 	0%{ background-size:120% 120%; }

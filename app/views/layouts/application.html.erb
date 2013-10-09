@@ -11,16 +11,17 @@
 	<div class="container-fluid">
 		<%= render :partial => "layouts/navbar" %>
 		<div id="flash_container"><%= render 'layouts/flash_messages' %></div>
-	  <div class="row-fluid">
 
+	  <div class="row-fluid">
 	    <div class="span3">
 	      <div class="well sidebar-nav">
-	        <ul class="nav nav-list">
+	      	<div id="flip" class="pull-right">Slide Menu</div>
+	        <ul id="main-left-bar" class="nav nav-list">
 	          <li class="nav-header">Tourist</li>
-	          <li class="active"><a href="#">Who we are?</a></li>
+	          <li><%= link_to "Discussions", discussions_path %></li>
+	          <li><%= link_to "Walks", walks_path %></li>
 	          <li><a href="#">What we are doing?</a></li>
 	          <li><a href="#">Why we doing it?</a></li>
-	          <li><a href="#">JavaScript</a></li>
 					  <li><a href="#">We in socials</a></li>
 					  <li><a href="#">Bubble GUm</a></li>
 	          <li class="nav-header">Additional</li>
@@ -28,9 +29,6 @@
 	          <li><%= link_to "SlideTabs", home_slide_tabs_path %></li>
 	          <li><%= link_to "Equipment Types", equipment_types_path %></li>
 	          <li><%= link_to "Equipment Set", equipment_create_set_path %></li>
-	          <!--li><a href="#">Contacts</a></li>
-	          <li><a href="#">Personal</a></li>
-	          <li><a href="#">Achievments</a></li-->
 	       </ul>
 	      </div><!--/.well -->
 	    </div><!--/span-->
@@ -38,17 +36,22 @@
 	    <div class="span9">
 	    		<%= yield %>
 	    </div>
-
 	  </div>
+
 	  <div class="totop">
 	   <div class="gototop">
 			<div class="arrowgototop"></div>
 	   </div>
   	</div>
+
+  	<div style="text-align:right">
+  		<%= image_tag "avatar/TouristCommunituClimb2.png", :size => "120x150", :style => "bottom:10px;right:20px;" %>
+  	</div>
+
   	<div>
 			<hr>
 		 	<footer>
-		   	<p>&copy; Company 2012</p>
+		   	<p>&copy; Tourists Community 2013</p>
 		  </footer>
 	  </div>
 	  <div id="toTop"><img src="/assets/backToTop.png" height="44" width="43" alt="Back to top" title="Back to top" /></div>

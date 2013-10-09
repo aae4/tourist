@@ -39,3 +39,7 @@ if ActiveRecord::Base.connection.table_exists? 'equipment_types'
 	EquipmentType.create!(:name => "Палатки") if !EquipmentType.find_by_name("Палатки")
 	EquipmentType.create!(:name => "Спальники") if !EquipmentType.find_by_name("Спальники")
 end
+
+if ActiveRecord::Base.connection.table_exists? 'users'
+	User.create!(:email => "abazov.aae4@gmail.com", :password => "11111111") if !User.find_by_email("abazov.aae4@gmaill.com")
+end

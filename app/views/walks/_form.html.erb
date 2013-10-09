@@ -1,0 +1,15 @@
+<%= simple_form_for @walk do |f| %>
+  <div class="white-form">
+  	
+  	<%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <div  class="">
+      <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>
+    </div>
+
+    <div class="form-inline">
+      <%= f.submit "Create", :class => "btn btn-success pull-right"%>
+      <%= link_to "walks list", walks_path, :class => "btn" %>
+    </div>
+  </div>
+<% end %>

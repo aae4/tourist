@@ -82,3 +82,12 @@
   -webkit-transform: translateY(-100%);  
   transform: translateY(-100%);  
 }
+
+#create-set-equip-list{
+  height: 100%;
+  overflow-y: auto;
+}
+
+#create-set-equip-list img{ 
+  width:75px; height:68px; 
+}

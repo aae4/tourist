@@ -1,0 +1,16 @@
+<div class="comment_msg row" id="comment-#{comment.id}">
+	<hr>
+	<div class="mini-avatar pull-left">
+		<%= image_tag(comment.user.avatar.url) %>
+	</div>
+	<div class="comment_content pull-left">
+		<div class="comment_header">
+			<% if current_user == comment.user %>
+	  		<%= link_to "×", comment_path(comment), :method => :delete, :remote => true, data: { confirm: 'Are you sure you want to remove this comment?', disable_with: "×" }, :class => 'close pull-right' %>
+	  	<% end %>
+	  	<h4><b><%= comment.user.email %></b></h4>
+	  	<small><%= comment.updated_at %></small>
+	  </div>
+	  <p class="keep_spaces"><%= comment.comment %></p>
+	</div>
+</div>

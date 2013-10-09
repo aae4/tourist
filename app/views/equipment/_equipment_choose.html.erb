@@ -1,11 +1,18 @@
-<div id="equip-list">
-	<ul id="equip-list">
+<div id="create-set-equip-list">
+	<table class="table table-bordered table-striped">
 		<% for equipment in @equipment %>
-			<li  class="loaded choose-equip" >
-				<% src = equipment.image.present? ? equipment.image.url : "/assets/carabin.jpg" %>
-				<a href="<%= src %>"><img src="<%= src %>" alt="<%= equipment.name %>"></a>
-				<span class="caption simple-caption"><%= equipment.name %></span></a>
-			</li>
+			<tr>
+				<td>
+					<% src = equipment.image.present? ? equipment.image.url : "/assets/carabin.jpg" %>
+					<a href="<%= src %>" ><img src="<%= src %>" alt="<%= equipment.name %>"></a>
+				</td>
+				<td><%= equipment.name %></td>
+				<td>
+					<div class="input-append">
+						<%= text_field_tag :count, "" %><%= link_to "Add", "", :class=>"btn choose-eq-button",  :eId => equipment.id, :eName => equipment.name %>
+					</div>
+				</td>
+			</tr>
 		<% end %>
-	</ul>
+	</table>
 </div>

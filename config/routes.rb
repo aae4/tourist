@@ -1,4 +1,5 @@
 Tourist::Application.routes.draw do
+
   get "paintings/index"
   get "paintings/new"
   get "paintings/edit"
@@ -14,7 +15,13 @@ Tourist::Application.routes.draw do
   get "equipment/get_by_type"
 
   devise_for :users
+
+  resources :comments, :only => [:create, :update, :destroy]
+
   resources :home
+  resources :walks
+  resources :discussions
+  resources :personal_cabinet
   resources :equipment
   resources :equipment_types
   resources :galleries

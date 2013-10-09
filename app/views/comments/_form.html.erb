@@ -1,0 +1,13 @@
+<div class="comment-form">
+	<div class="mini-avatar pull-left">
+		<%= image_tag(current_user.avatar.url) %>
+	</div>
+	<div class="pull-left">
+		<%= simple_form_for comment, :remote => true do |f| %>
+		  <%= f.input :comment, :as => :text, :input_html => {:class => "comment" }, :label => false %>
+		  <%= f.input :commentable_id, :as => :hidden, :value => comment.commentable_id %>
+		  <%= f.input :commentable_type, :as => :hidden, :value => comment.commentable_type %>
+		  <%= f.button :submit, :class => "btn btn-primary", :disable_with => "Submitting…" %>
+		<% end %>
+	</div>
+</div>

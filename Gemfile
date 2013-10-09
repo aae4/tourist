@@ -36,6 +36,14 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'devise'
+gem 'cancan'
+gem 'rolify'
+
+gem 'acts_as_commentable'
+
+gem 'haml-rails'
+
+
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
