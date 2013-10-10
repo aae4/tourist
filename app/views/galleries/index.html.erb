@@ -8,8 +8,9 @@
 	<ul id="gallery-big">
 		<% for gallery in @galleries %>
   		<li class="loaded">
-  			<% url = gallery.paintings.present? ? gallery.paintings.first.image.url : "assets/bg2_bup.jpg" %>
-  			<a href="<%= gallery.id %>"><img src="<%= url %>" alt="photo1 title">
+  			<% url = gallery.paintings.present? ? gallery.paintings.first.image.url : "bg2_bup.jpg" %>
+  			<a href="<%= gallery.id %>">
+          <%= image_tag(url, :alt=>"photo1 title") %>
   				<span class="caption simple-caption"><p><%= gallery.name %></p></span> </a>
   		</li>
 		<% end %>

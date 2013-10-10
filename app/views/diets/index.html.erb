@@ -1,0 +1,9 @@
+<div class="diets white-form-big">
+	<% for diet in @diets %>
+		<div>
+			<h3><%= link_to diet.name, diet_path(diet) %></h3>
+			<small><%= diet.walk.name if diet.walk %> <%= diet.user.email %></small>
+		</div>
+	<% end %>
+</div>
+<%= link_to "New diet", new_diet_path %>

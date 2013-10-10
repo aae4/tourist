@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009123856) do
+ActiveRecord::Schema.define(version: 20131010123313) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 20131009123856) do
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "diets", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "walk_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "discussions", force: true do |t|
     t.string   "name"
     t.text     "text"
@@ -41,11 +49,19 @@ ActiveRecord::Schema.define(version: 20131009123856) do
     t.string   "name"
     t.text     "description"
     t.integer  "equipment_type_id"
-    t.decimal  "weight"
+    t.decimal  "weight",              precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "equipment_type_name"
     t.string   "image"
+  end
+
+  create_table "equipment_sets", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "walk_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "equipment_types", force: true do |t|
@@ -105,9 +121,32 @@ ActiveRecord::Schema.define(version: 20131009123856) do
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
+  create_table "votes", force: true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
+
+  create_table "walk_types", force: true do |t|
+    t.string   "name"
+    t.string   "walk_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "walks", force: true do |t|
     t.string   "name"
+    t.integer  "category"
     t.integer  "user_id"
+    t.integer  "walk_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

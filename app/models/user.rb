@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :discussions
   has_many :walks
+  has_many :equipment_sets
+  has_many :diets
 end

@@ -1,3 +1,16 @@
 // Place all the styles related to the walks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.components{
+	margin-top: 10px;
+	height: 160px;
+}
+
+.component-button {
+  float:left;
+  width:23%;
+  margin:0;
+  padding:0;
+  text-align:center;
+}

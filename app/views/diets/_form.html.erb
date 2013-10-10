@@ -1,0 +1,16 @@
+<%= simple_form_for @diet do |f| %>
+  <div class="white-form">
+  	
+  	<%= f.hidden_field :user_id, :value => current_user.id %>
+  	<%= f.hidden_field :walk_id, :value => params[:walk_id] %>
+
+    <div  class="">
+      <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>
+    </div>
+
+    <div class="form-inline">
+      <%= f.submit "Create", :class => "btn btn-success pull-right"%>
+      <%= link_to "diets list", diets_path, :class => "btn" %>
+    </div>
+  </div>
+<% end %>

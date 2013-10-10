@@ -2,6 +2,7 @@
 	<% for walk in @walks %>
 		<div>
 			<h3><%= link_to walk.name, walk_path(walk) %></h3>
+			<small><%= walk.walk_type.name %>, <%= walk.category %> categ.</small>
 		</div>
 	<% end %>
 </div>

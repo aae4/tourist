@@ -22,6 +22,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def upvote
+    @comment = Comment.find(params[:id])
+    @comment.liked_by current_user
+    render "update_likes"
+  end
+
+  def downvote
+    @comment = Comment.find(params[:id])
+    @comment.downvote_from current_user
+    render "update_likes"
+  end
+
   private
     def comment_params
       params.require(:comment).permit(:comment, :commentable_id, :commentable_type)

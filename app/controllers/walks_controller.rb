@@ -35,11 +35,11 @@ class WalksController < ApplicationController
 
   def show
   	@walk = Walk.find(params[:id])
-  	@discussions = Discussion.find_by_params(:walk_id => @walk.id)
+  	@discussions = Discussion.find_by_params(:walk_id => @walk.id).limit(3)
   end
 
   private
     def walk_params
-      params.require(:walk).permit(:name, :user_id)
+      params.require(:walk).permit(:name, :user_id, :walk_type_id, :category)
     end
 end

@@ -9,6 +9,9 @@
 					<small>Created by: <%= discussion.user.email %> at: <%= discussion.created_at %></small>
 				<% end %>
 			</div>
+			<% if discussion != @discussions.last %>
+				<hr>
+			<% end %>
 	<% end %>
-	<%= link_to "New Discussion", new_discussion_path(:walk_id => @walk.id) %>
+	<%= link_to "New Discussion", new_discussion_path(:walk_id => @walk.id), :class => "pull-right" %>
 </div>

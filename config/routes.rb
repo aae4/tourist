@@ -17,10 +17,18 @@ Tourist::Application.routes.draw do
   devise_for :users
 
   resources :comments, :only => [:create, :update, :destroy]
+  resources :comments do
+    member do
+      put "like", to: "comments#upvote"
+      put "dislike", to: "comments#downvote"
+    end
+  end
 
   resources :home
   resources :walks
   resources :discussions
+  resources :equipment_sets
+  resources :diets
   resources :personal_cabinet
   resources :equipment
   resources :equipment_types

@@ -14,3 +14,13 @@
 	  <p class="keep_spaces"><%= comment.comment %></p>
 	</div>
 </div>
+<div class="likes" style="margin-top:10px;margin-left:47px">
+	<small>
+		<span class="vote">
+		<%= link_to "Upvote", like_comment_path(comment), method: :put, :remote => true %> : <span id="comment<%=comment.id%>-upvote"><%= comment.positives.size%></span>|
+		</span>
+		<span class="vote">
+		<%= link_to "Downvote", dislike_comment_path(comment), method: :put, :remote => true%> : <span id="comment<%=comment.id%>-downvote"><%= comment.negatives.size%></span>
+		</span>
+	</small>
+</div>

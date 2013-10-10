@@ -1,0 +1,8 @@
+<div class="equipment_sets white-form-big">
+	<% for equipment_set in @equipment_sets %>
+		<div>
+			<h3><%= link_to equipment_set.name, equipment_set_path(equipment_set) %></h3>
+		</div>
+	<% end %>
+</div>
+<%= link_to "New Equipment_set", new_equipment_set_path %>

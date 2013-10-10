@@ -1,23 +1,44 @@
-development:
-  adapter: postgresql
-  encoding: unicode
+#development:
+  #adapter: postgresql
+  #encoding: unicode
+  #database: tourist_development
+  #pool: 5
+  #username: aabazov
+  #password:
+#
+#test:
+#  adapter: postgresql
+  #encoding: unicode
+  #database: tourist_test
+  #ool: 5
+  #username: aabazov
+  #password:
+#
+#production:
+  #adapter: postgresql
+  #encoding: unicode
+  #database: tourist_production
+  #pool: 5
+  #username: aabazov
+  #password:
+
+development: &development
+  adapter: mysql2
+  host: localhost
+  username: root
+  password: root          
   database: tourist_development
-  pool: 5
-  username: aabazov
-  password:
 
-test:
-  adapter: postgresql
-  encoding: unicode
+test: &test
+  adapter: mysql2
+  host: localhost
+  username: root
+  password: root
   database: tourist_test
-  pool: 5
-  username: aabazov
-  password:
 
-production:
-  adapter: postgresql
-  encoding: unicode
+production: &production
+  adapter: mysql2
+  host: localhost
   database: tourist_production
-  pool: 5
-  username: aabazov
-  password:
+  username: root
+  password: root
