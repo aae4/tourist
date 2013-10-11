@@ -2,7 +2,9 @@
   <div class="white-form">
   	
   	<%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :walk_id, :value => params[:walk_id] %>
+    <% if params[:walk_id] %>
+      <%= f.hidden_field :walk_id, :value => params[:walk_id] %>
+    <% end %>
 
     <div  class="">
       <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>

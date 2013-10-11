@@ -6,7 +6,7 @@ class Discussion < ActiveRecord::Base
 
 	def self.find_by_params(params)
 		discussions = Discussion.all
-		discussions = Discussion.where(:walk_id => params[:walk_id]) unless params[:walk_id].blank?
+		discussions = discussions.where(:walk_id => params[:walk_id]) unless params[:walk_id].blank?
 		discussions = discussions.includes(:comments).order("comments.created_at desc")
 		return discussions
 	end

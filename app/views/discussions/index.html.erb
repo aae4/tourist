@@ -8,6 +8,7 @@
 				<small>Created by: <%= discussion.user.email %> at: <%= discussion.created_at %></small>
 			<% end %>
 		</div>
+		<% if discussion != @discussions.last %><hr><% end %>
 	<% end %>
 </div>
 <%= link_to "New Discussion", new_discussion_path(:walk_id => params[:walk_id]) %>

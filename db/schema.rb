@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20131010123313) do
     t.string   "name"
     t.text     "description"
     t.integer  "equipment_type_id"
-    t.decimal  "weight",              precision: 10, scale: 0
+    t.decimal  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "equipment_type_name"

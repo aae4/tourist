@@ -2,7 +2,7 @@ class DietsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index, :show]
 
   def index
-  	@diets = Diet.all
+  	@diets = Diet.find_by_params(params)
   end
 
   def new

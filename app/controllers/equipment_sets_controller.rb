@@ -2,7 +2,7 @@ class EquipmentSetsController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index, :show]
 
   def index
-  	@equipment_sets = EquipmentSet.all
+  	@equipment_sets = EquipmentSet.find_by_params(params)
   end
 
   def new
