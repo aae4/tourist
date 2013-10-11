@@ -21,7 +21,6 @@ jQuery ->
     .on "ajax:beforeSend", ".comment_msg", ->
       $(this).fadeTo('fast', 0.5)
     .on "ajax:success", ".comment_msg", ->
-      alert($(this).attr("class"))
       $(this).hide('fast')
     .on "ajax:error", ".comment_msg", ->
       $(this).fadeTo('fast', 1)

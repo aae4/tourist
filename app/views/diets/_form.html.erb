@@ -1,5 +1,5 @@
 <%= simple_form_for @diet do |f| %>
-  <div class="white-form">
+  <div class="white-form-big">
   	
   	<%= f.hidden_field :user_id, :value => current_user.id %>
   	<%= f.hidden_field :walk_id, :value => params[:walk_id] %>
@@ -7,10 +7,18 @@
     <div  class="">
       <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>
     </div>
+    
+    <hr>
+    <a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal">Add Product</a>
 
     <div class="form-inline">
       <%= f.submit "Create", :class => "btn btn-success pull-right"%>
       <%= link_to "diets list", diets_path, :class => "btn" %>
     </div>
+
   </div>
+
 <% end %>
+
+<a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal">Add Product</a>
+<%= render :partial => "add_product_modal" %>

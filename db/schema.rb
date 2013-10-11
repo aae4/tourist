@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010123313) do
+ActiveRecord::Schema.define(version: 20131011061440) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20131010123313) do
     t.string   "name"
     t.text     "description"
     t.integer  "equipment_type_id"
-    t.decimal  "weight"
+    t.decimal  "weight",              precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "equipment_type_name"
@@ -82,6 +82,23 @@ ActiveRecord::Schema.define(version: 20131010123313) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "product_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "kcals"
+    t.string   "fats"
+    t.string   "proteins"
+    t.string   "carbohydrates"
+    t.integer  "product_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", force: true do |t|

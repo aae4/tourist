@@ -1,0 +1,55 @@
+<div class="add-product-modal modal hide fade modal-medium" id="addProductModal">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:20px">×</button>
+    <div class="addProductModal_content">
+        <div class="listControl">
+          <a id="expandList">Expand All</a>
+          <a id="collapseList">Collapse All</a>
+        </div>
+        <div id="listContainer">
+          <div class="product_columns">
+            <div class="product_column_big">Наименование</div>
+            <div class="product_column_small">ККал.</div>
+            <div class="product_column_small">Белки</div>
+            <div class="product_column_small">Жиры</div>
+            <div class="product_column_small">Углеводы</div>
+            <div class="product_column_big">Действия</div>
+          </div>
+          <hr>
+          <ul id="expList">
+            <% for product_type in ProductType.all %>
+              <li><%= product_type.name %>
+                <ul>
+                  <% for product in product_type.products %>
+                    <li>
+                      <small>
+                      <div class="product_columns">
+                        <div class="product_column_big">
+                          <%= product.name %>
+                        </div>
+                        <div class="product_column_small">
+                          <%= product.kcals %>
+                        </div>
+                        <div class="product_column_small">
+                          <%= product.proteins %>
+                        </div>
+                        <div class="product_column_small">
+                          <%= product.fats %>
+                        </div>
+                        <div class="product_column_small">
+                          <%= product.carbohydrates %>
+                        </div>
+                        <div class="product_column_big">
+                          добавить
+                        </div>
+                      </div>
+                    </li>
+                  </small>
+                    <hr>
+                  <% end %>
+                </ul>
+              </li>
+             <% end %>
+          </ul>
+        </div>
+    </div>
+</div>

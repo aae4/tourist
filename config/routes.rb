@@ -27,6 +27,13 @@ Tourist::Application.routes.draw do
   resources :home
   resources :walks
   resources :discussions
+  resources :product_types, :only => [:index]
+  resources :product_types do
+    get "get_products", to: "product_types#get_products"
+    #member do
+      #get "get_products", to: "product_types#get_products"
+    #end
+  end
   resources :equipment_sets
   resources :diets
   resources :personal_cabinet
