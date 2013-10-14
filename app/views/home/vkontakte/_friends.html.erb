@@ -1,0 +1,29 @@
+<table class="table">
+  <% if friends.empty? %>
+    <tr>
+      <td>Никого не найдено</td>
+    </tr>
+  <% else %>
+    <% friends.each do |friend| %>
+      <tr>
+        <td>
+          <%= link_to image_tag(friend.photo), vk_url(friend), target: '_blank' %>
+        </td>
+        
+        <td class="wide">
+          <i class="icon-user"></i>
+          <%= link_to "#{friend.first_name} #{friend.last_name}", vk_url(friend), target: '_blank' %><br />
+
+          <%= form_tag send_msg_path, :remote => true do |f| %>
+            <%= hidden_field_tag :uid, friend.uid %>
+            <%= text_area_tag :message %>
+            <%= submit_tag "Send Message", :class => "btn btn-primary"%>
+          <% end %>
+          <span class="vk_message_status_<%= friend.id %>"></span>
+          
+          <%= online_status(friend) %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

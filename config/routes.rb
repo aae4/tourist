@@ -1,5 +1,7 @@
 Tourist::Application.routes.draw do
 
+  get "omniauth_callbacks/facebook"
+  get "omniauth_callbacks/vkontakte"
   get "paintings/index"
   get "paintings/new"
   get "paintings/edit"
@@ -9,12 +11,14 @@ Tourist::Application.routes.draw do
 
   get "home/about"
   get "home/slide_tabs"
+  get "home/vkontakte"
 
   get "equipment_types/suggestions"
   get "equipment/create_set"
   get "equipment/get_by_type"
 
-  devise_for :users
+  #devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :comments, :only => [:create, :update, :destroy]
   resources :comments do
@@ -23,6 +27,7 @@ Tourist::Application.routes.draw do
       put "dislike", to: "comments#downvote"
     end
   end
+  post 'home/send_vk_message', :as => "send_msg"
 
   resources :home
   resources :walks

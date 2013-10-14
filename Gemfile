@@ -38,8 +38,13 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 gem 'cancan'
 gem 'rolify'
+
+gem 'vkontakte_api', '~> 1.2'
 
 gem 'acts_as_commentable'
 gem 'acts_as_votable', '~> 0.7.1'

@@ -1,0 +1,20 @@
+<table class="table">
+  <% if @groups.empty? %>
+    <tr>
+      <td>Вы не состоите в группах</td>
+    </tr>
+  <% else %>
+    <% @groups.each do |group| %>
+      <tr>
+        <td>
+          <%= link_to image_tag(group.photo), vk_url(group), target: '_blank' %>
+        </td>
+        
+        <td class="wide">
+          <i class="icon-comment"></i>
+          <%= link_to group.name, vk_url(group), target: '_blank' %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+<%= link_to vk_url(@user), target: '_blank' do %>
+  <%= image_tag(@user.photo, width: 20) %>
+  <%= "#{@user.first_name} #{@user.last_name}" %>
+<% end %>
+
+
+<div class="span4">
+  <%= render 'home/vkontakte/sidebar' %>
+</div>
