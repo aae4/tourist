@@ -22,7 +22,7 @@
                   <% for product in product_type.products %>
                     <li>
                       <small>
-                      <div class="product_columns">
+                      <div class="product_columns" pid="<%=product.id%>" pname="<%=product.name%>" pkcals="<%=product.kcals%>" pproteins="<%=product.proteins%>" pfats="<%=product.fats%>" pcarbohydrates="<%= product.carbohydrates%>">
                         <div class="product_column_big">
                           <%= product.name %>
                         </div>
@@ -39,7 +39,7 @@
                           <%= product.carbohydrates %>
                         </div>
                         <div class="product_column_big">
-                          добавить
+                          <%= link_to "Add Product", '#', class: "choose_product" %>
                         </div>
                       </div>
                     </li>

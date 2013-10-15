@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014064216) do
+ActiveRecord::Schema.define(version: 20131015094111) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 20131014064216) do
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "days", force: true do |t|
+    t.string   "name"
+    t.integer  "sequence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "days_diets", force: true do |t|
+    t.integer "day_id"
+    t.integer "diet_id"
+  end
+
+  create_table "days_meal_types", force: true do |t|
+    t.integer "day_id"
+    t.integer "meal_type_id"
+  end
 
   create_table "diets", force: true do |t|
     t.string   "name"
@@ -71,6 +88,20 @@ ActiveRecord::Schema.define(version: 20131014064216) do
   end
 
   create_table "galleries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meal_products", force: true do |t|
+    t.integer  "meal_type_id"
+    t.integer  "product_id"
+    t.integer  "product_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meal_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

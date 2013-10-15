@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  meal_type_id: 1
+  product_id: 1
+  product_weight: 1
+
+two:
+  meal_type_id: 1
+  product_id: 1
+  product_weight: 1

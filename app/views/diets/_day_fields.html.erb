@@ -1,0 +1,13 @@
+<li>
+	<fieldset>
+	  <!--%= f.text_field :name %--> 
+	  <span class="dayNum">Day N</span>
+	  <%= link_to "x", '#', class: "remove_fields" %>
+	  <ul>
+	  <%= f.fields_for :meal_types do |builder| %>
+	    <%= render 'meal_type_fields', f: builder %>
+	  <% end %>
+		</ul>
+	  <%= link_to_add_fields "Add meal type", f, :meal_types %>
+	</fieldset>
+</li>

@@ -7,9 +7,20 @@
     <div  class="">
       <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>
     </div>
-    
     <hr>
-    <a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal">Add Product</a>
+
+    <div id="dietListContainer">
+      <ul id="dietExpList">
+        <%= f.fields_for :days do |builder| %>
+          <%= render 'day_fields', f: builder, :day => day %>
+        <% end %>
+        <%= link_to_add_fields "Add Day", f, :days %>
+      </ul>
+    </div>
+
+    <div>
+      <a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal">Add Product</a>
+    </div>
 
     <div class="form-inline">
       <%= f.submit "Create", :class => "btn btn-success pull-right"%>
@@ -20,5 +31,4 @@
 
 <% end %>
 
-<a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal">Add Product</a>
 <%= render :partial => "add_product_modal" %>

@@ -1,0 +1,16 @@
+<li>
+	<fieldset>
+	  <%= f.select :name, options_for_select(MealType::OPTIONS) %>
+	  <%= f.hidden_field :_destroy %>
+	  <%= link_to "x", '#', class: "remove_fields" %>
+	 	<ul>
+	  <%= f.fields_for :meal_products do |builder| %>
+	    <%= render 'meal_product_fields', f: builder %>
+	  <% end %>
+		</ul>
+		<!--a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal" class="openAddProduct">Add Product</a-->
+		<!--%= link_to_add_fields "Add product meal", f, :meal_products %-->
+		<span class="new_product_field"><%= link_to_add_fields "Add product", f, :meal_products %></span>
+		<%= link_to "Add Product", '#', class: "addProductModalOpen" %>
+	</fieldset>
+</li>

@@ -9,6 +9,18 @@ function prepareList() {
   	})
   	.addClass('collapsed')
   	.children('ul').hide();
+
+  $('#dietExpList').find('li:has(ul)')
+    .click( function(event) {
+      if (this == event.target) {
+        $(this).toggleClass('expanded');
+        $(this).children('ul').toggle('medium');
+      }
+      return false;
+    })
+    .addClass('collapsed')
+    .children('ul').hide();
+
   };
  
 $(document).ready( function() {
@@ -26,4 +38,11 @@ $(document).ready( function() {
 	    $('.collapsed').removeClass('expanded');
 	    $('.collapsed').children().hide('medium');
 	})
+});
+
+$('form a.add_fields, form a.remove_fields').live('click', function(){
+  $(".dayNum").each(function(index, element) {
+    //index starts with 0
+    $(this).text("Day " + (index + 1));
+  });
 });
