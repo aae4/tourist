@@ -1,4 +1,16 @@
 <div class="diet">
 	<h2><p><%= @diet.name %></p></h2>
 	<small><%= @diet.walk.name if @diet.walk %> <%= @diet.user.email %></small>
+	<hr/>
+	<% @diet.days.each do |day| %>
+		<%= day.name %><br/>
+		<ul>
+		<% day.meal_types.each do |meal_type| %>
+			<li>
+				<%= meal_type.meal_type %>
+				Products: <%= meal_type.products.count %>
+			</li>
+		<% end %>
+		</ul>
+	<% end %>
 </div>

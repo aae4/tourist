@@ -26,14 +26,14 @@ development: &development
   adapter: mysql2
   host: localhost
   username: root
-  password: root          
+  password: password
   database: tourist_development
 
 test: &test
   adapter: mysql2
   host: localhost
   username: root
-  password: root
+  password: password
   database: tourist_test
 
 production: &production
@@ -41,4 +41,4 @@ production: &production
   host: localhost
   database: tourist_production
   username: root
-  password: root
+  password: password

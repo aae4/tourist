@@ -6,6 +6,6 @@ class MealType < ActiveRecord::Base
 
 	accepts_nested_attributes_for :meal_products
 
-	OPTIONS = [['Breakfast', 'breakfast'], ['Lunch', 'lunch'], ['Nosh', 'nosh'], ['Dinner', 'dinner'], ['Handheld','handheld']]
-	validates_inclusion_of :name, :in => OPTIONS
+	OPTIONS = [['breakfast', 'breakfast'], ['lunch', 'lunch'], ['nosh', 'nosh'], ['dinner', 'dinner'], ['handheld','handheld']]
+	#validates_inclusion_of :meal_type, :in => OPTIONS
 end

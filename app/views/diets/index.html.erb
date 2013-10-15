@@ -1,7 +1,7 @@
 <div class="diets white-form-big">
 	<% for diet in @diets %>
 		<div>
-			<h3><%= link_to diet.name, diet_path(diet) %></h3>
+			<h3><%= link_to diet.name + "qq", diet_path(diet) %></h3>
 			<small><%= diet.walk.name if diet.walk %> <%= diet.user.email %></small>
 		</div>
 		<% if diet != @diets.last %><hr><% end %>

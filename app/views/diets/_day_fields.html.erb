@@ -2,6 +2,7 @@
 	<fieldset>
 	  <!--%= f.text_field :name %--> 
 	  <span class="dayNum">Day N</span>
+	  <%= f.hidden_field :name, :class => "dayNumField" %>
 	  <%= link_to "x", '#', class: "remove_fields" %>
 	  <ul>
 	  <%= f.fields_for :meal_types do |builder| %>

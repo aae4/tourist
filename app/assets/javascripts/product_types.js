@@ -44,5 +44,6 @@ $('form a.add_fields, form a.remove_fields').live('click', function(){
   $(".dayNum").each(function(index, element) {
     //index starts with 0
     $(this).text("Day " + (index + 1));
+    $(this).parent().find('.dayNumField').val("Day " + (index + 1));
   });
 });

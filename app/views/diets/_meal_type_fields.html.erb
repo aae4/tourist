@@ -1,7 +1,6 @@
 <li>
 	<fieldset>
-	  <%= f.select :name, options_for_select(MealType::OPTIONS) %>
-	  <%= f.hidden_field :_destroy %>
+	  <%= f.select :meal_type, options_for_select(MealType::OPTIONS) %>
 	  <%= link_to "x", '#', class: "remove_fields" %>
 	 	<ul>
 	  <%= f.fields_for :meal_products do |builder| %>

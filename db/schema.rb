@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20131015094111) do
 
   create_table "meal_types", force: true do |t|
     t.string   "name"
+    t.string   "meal_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
