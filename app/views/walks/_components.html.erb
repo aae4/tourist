@@ -1,5 +1,8 @@
 <div class="components white-form-big">
-	<h2><%= link_to t('.components'), "#"%></h2>
+	<h2>
+		<span class="pull-right">Завершено</span>
+		<%= link_to t('.components'), "#"%>
+	</h2>
 	<div class="component-buttons">
 		<div class="component-button">
 			<%= link_to image_tag('walk_components/Clothing-and-gear.png'), new_equipment_set_path(:walk_id => @walk.id) %>

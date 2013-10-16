@@ -29,6 +29,10 @@ Diet Compose Table List style
 #dietListContainer{
   margin-top:15px;
 }
+
+#dietListContainer div{
+  text-align: left
+}
  
 #dietExpList ul, li {
     list-style: none;
@@ -84,12 +88,20 @@ DIet Products Chooose Table
 	height: 20px;
 }
 
+.choose_products_list.form{
+  height: 10px;
+}
+
 .choose_products_list.header{
 	padding-left: 40px;
 }
 
 .choose_products_list.form-header{
+  padding:0px;
 	padding-left: 100px;
+}
+.choose_products_list.form-header div{
+  padding:0px;
 }
 
 .choose_products_list hr{
@@ -124,6 +136,7 @@ DIet Products Chooose Table
 .product_weight_field{
 	width:25px;
 }
+
 #dietListContainer > form > fieldset{
   border: none;
   border: solid 1px #CCC;
@@ -143,8 +156,22 @@ DIet Products Chooose Table
   margin: 10px 0;
   padding: 10px;
 }
+
+#dietListContainer fieldset.products_set{
+  border-bottom: solid 1px #CCC;
+  margin: 0;
+  margin: 10px 0;
+}
+
+#dietListContainer fieldset.products_set div{
+  padding:0px;
+  font-size:12px;
+}
+
 .select_meal_type{
-	width:110px;
+  font-size: 12px;
+  width: 80px;
+  height: 25px;
 	border-radius: 0px;
 	background-image: linear-gradient(to bottom, #FFFFFF, #38D9E7);
 	background: -webkit-gradient(linear, left top, left 15, from(#FFFFFF), color-stop(4%, #f4f4f4), to(#FFFFFF)) !important;
@@ -153,6 +180,8 @@ DIet Products Chooose Table
 .dayNum{
 	height:20px;
 	padding:5px;
+  font-size: 16px;
+  font-weight: bold;
 	background-color: #C3FCB1;
 }
 
@@ -170,7 +199,10 @@ DIet Products Chooose Table
 
 .addProductModalOpen{
 	/*height:20px;*/
-	padding:5px;
+  font-size: 12px;
+	padding:0px !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
 	background-image: linear-gradient(to bottom, #FBFF9D, #FFEF34);
 	&:hover { background-color: #FFEF34 }
 	margin-top:20px;
