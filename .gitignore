@@ -26,3 +26,4 @@ capybara-*.html
 /spec/tmp/*
 
 /config/initializers/development_s3_env.rb
+/config/database.yml

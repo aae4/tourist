@@ -8,7 +8,8 @@
     </div>
 
     <div class="">
-      <%= f.input :walk_type_id, :collection => WalkType.all, :default => 1, label: false, input_html: { class: 'span10' } %>
+      <% walk_types = WalkType.all.map{|wt| [I18n.t("#{wt.name}"), wt.id]} %>
+      <%= f.input :walk_type_id, :collection => walk_types, :default => 1, label: false, input_html: { class: 'span10' } %>
     </div>
 
     <div class="">

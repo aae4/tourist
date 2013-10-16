@@ -4,7 +4,16 @@
         <div class="listControl">
           <a id="expandList">Expand All</a>
           <a id="collapseList">Collapse All</a>
+          <div class="pull-right">
+            <%= form_tag %>
+            <%= text_field_tag :term, "", :class => "product_search" %>  <i class="icon-search"></i>
+          </div>
+          <input id="cc" name="dept" value="01">
         </div>
+
+        <div id="modal_search">
+        </div>
+
         <div id="listContainer">
           <div class="product_columns">
             <div class="product_column_big">Наименование</div>
@@ -39,7 +48,9 @@
                           <%= product.carbohydrates %>
                         </div>
                         <div class="product_column_big">
-                          <%= link_to "Add Product", '#', class: "choose_product" %>
+                          <%= link_to '#', class: "choose_product" do %>
+                            <i class="icon-plus"></i>
+                          <% end %>
                         </div>
                       </div>
                     </li>

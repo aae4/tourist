@@ -62,6 +62,8 @@ gem "fog", "~> 1.3.1" #for sotring images in AMazon S3
 gem 'jquery-turbolinks'
 gem 'sketchily' #svg-edit plugin
 
+gem 'i18n-js'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

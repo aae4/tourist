@@ -1,0 +1,10 @@
+ru:
+  day: 'День'
+  add_day: 'Добавить день'
+  add_meal_type: 'Добавить трапезу'
+  add_product: 'Добавить продукт'
+  breakfast: Завтрак
+  lunch: Обед
+  dinner: Ужин
+  nosh: Перекус
+  handheld: Карманное питание

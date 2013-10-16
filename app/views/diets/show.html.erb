@@ -1,16 +1,56 @@
-<div class="diet">
+<div class="diet dietListContainer">
 	<h2><p><%= @diet.name %></p></h2>
 	<small><%= @diet.walk.name if @diet.walk %> <%= @diet.user.email %></small>
 	<hr/>
+
+  <div class="choose_products_list header">
+    <div class="pcol_big">Наименование</div>
+    <div class="pcol_medium">ККал.</div>
+    <div class="pcol_medium">Белки</div>
+    <div class="pcol_medium">Жиры</div>
+    <div class="pcol_medium">Углеводы</div>
+    <div class="pcol_medium">Вес/Грамм</div>
+  </div>
+
+	<ul id="dietExpList">
 	<% @diet.days.each do |day| %>
+		<li>
 		<%= day.name %><br/>
-		<ul>
-		<% day.meal_types.each do |meal_type| %>
-			<li>
-				<%= meal_type.meal_type %>
-				Products: <%= meal_type.products.count %>
-			</li>
-		<% end %>
-		</ul>
+			<ul>
+				<% day.meal_types.each do |meal_type| %>
+					<li>
+						<%= I18n.t("#{meal_type.meal_type}") %>
+						<ul>
+							<% meal_type.products.each do |product| %>
+								<li>
+									<div class="choose_products_list">
+								  	<div class="pcol_big">
+								  		<%= product.name %>
+								  	</div>
+								  	<div class="pcol_medium">
+								  		<%= product.kcals %>
+								  	</div>
+								  	<div class="pcol_medium">
+								  		<%= product.proteins %>
+								  	</div>
+								  	<div class="pcol_medium">
+								  		<%= product.fats %>
+								  	</div>
+								  	<div class="pcol_medium">
+								  		<%= product.carbohydrates %>
+								  	</div>
+								  	<div class="pcol_medium">
+								  		<!--%= MealProduct.find_by_product_id(product.id).id %-->
+								  		<%= MealProduct.find_by_product_id(product.id).product_weight %>
+								  	</div>
+							  	</div>
+								</li>
+							<% end %>
+						</ul>
+					</li>
+				<% end %>
+			</ul>
+		</li>
 	<% end %>
+	</ul>
 </div>

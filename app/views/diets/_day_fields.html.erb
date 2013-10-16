@@ -1,14 +1,20 @@
 <li>
-	<fieldset>
-	  <!--%= f.text_field :name %--> 
-	  <span class="dayNum">Day N</span>
-	  <%= f.hidden_field :name, :class => "dayNumField" %>
-	  <%= link_to "x", '#', class: "remove_fields" %>
-	  <ul>
-	  <%= f.fields_for :meal_types do |builder| %>
-	    <%= render 'meal_type_fields', f: builder %>
-	  <% end %>
-		</ul>
-	  <%= link_to_add_fields "Add meal type", f, :meal_types %>
-	</fieldset>
+	<ul>
+		<fieldset class="days_set">
+		  <!--%= f.text_field :name %--> 
+		 	<%= link_to '#', class: "remove_fields" do %>
+		  	<i class="icon-remove"></i>
+		  <% end %>
+		  <span class="dayNum">
+		  	<%= f.object.name || "DayN" %>
+		  </span>
+		  <%= f.hidden_field :name, :class => "dayNumField" %>
+		  <br/>
+		  <%= f.fields_for :meal_types do |builder| %>
+		    <%= render 'meal_type_fields', f: builder %>
+		  <% end %>
+		  <%= link_to_add_fields I18n.t('add_meal_type'), f, :meal_types, :class=>"btn add_meal_type_button" %>
+		</fieldset>
+	</ul>
+	<hr/>
 </li>

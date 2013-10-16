@@ -17,6 +17,9 @@ Tourist::Application.routes.draw do
   get "equipment/create_set"
   get "equipment/get_by_type"
 
+  get "products/suggestions"
+  get "product/get_by_type"
+
   #devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

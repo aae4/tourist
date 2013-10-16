@@ -44,11 +44,11 @@ Diet Compose Table List style
     background-color:#121212;
 }
 #dietExpList li {
-    line-height:140%;
-    text-indent:0px;
-    background-position: 1px 8px;
-    padding-left: 20px;
-    background-repeat: no-repeat;
+  line-height:100%;
+  text-indent:0px;
+  background-position: 1px 8px;
+  padding-left: 20px;
+  background-repeat: no-repeat;
 }
 
 #dietExpList li ul{
@@ -83,6 +83,15 @@ DIet Products Chooose Table
 	width:100%;
 	height: 20px;
 }
+
+.choose_products_list.header{
+	padding-left: 40px;
+}
+
+.choose_products_list.form-header{
+	padding-left: 100px;
+}
+
 .choose_products_list hr{
 	margin:0;
 }
@@ -110,4 +119,61 @@ DIet Products Chooose Table
   padding:0;
   text-align:center;
   vertical-align: middle;
+}
+
+.product_weight_field{
+	width:25px;
+}
+#dietListContainer > form > fieldset{
+  border: none;
+  border: solid 1px #CCC;
+  padding: 10px 15px;
+  margin: 15px 0;
+  fieldset {
+    border: none;
+    margin: 0;
+    margin: 10px 0;
+    padding: 0;
+  }
+}
+
+#dietListContainer fieldset.days_set{
+  border: solid 1px #CCC;
+  margin: 0;
+  margin: 10px 0;
+  padding: 10px;
+}
+.select_meal_type{
+	width:110px;
+	border-radius: 0px;
+	background-image: linear-gradient(to bottom, #FFFFFF, #38D9E7);
+	background: -webkit-gradient(linear, left top, left 15, from(#FFFFFF), color-stop(4%, #f4f4f4), to(#FFFFFF)) !important;
+  background: -moz-linear-gradient(top, #FFFFFF, #f4f4f4 1px, #FFFFFF 15px) !important;
+}
+.dayNum{
+	height:20px;
+	padding:5px;
+	background-color: #C3FCB1;
+}
+
+.add_meal_type_button{
+	margin-left:15px;
+	background-image: linear-gradient(to bottom, #CAF1ED, #38D9E7);
+	&:hover { background-color: #38D9E7 }
+	margin-top:20px;
+	border-radius: 0px;
+}
+
+.add_day_button{
+	border-radius: 0px;
+}
+
+.addProductModalOpen{
+	/*height:20px;*/
+	padding:5px;
+	background-image: linear-gradient(to bottom, #FBFF9D, #FFEF34);
+	&:hover { background-color: #FFEF34 }
+	margin-top:20px;
+	margin-left:40px;
+	border-radius: 0px;
 }

@@ -51,7 +51,7 @@ class EquipmentTypesController < ApplicationController
   def suggestions
   	suggests = EquipmentType.all
   	term = Regexp.escape(params[:term] || "")
-  	suggests = suggests.select("name, id").where("name ILIKE ?", "%#{term}%")#.map{|q| [q.name, q.id]}.sort
+  	suggests = suggests.select("name, id").where("name LIKE ?", "%#{term}%")#.map{|q| [q.name, q.id]}.sort
   	suggests = suggests.collect do |t|
       { id: t.id, value: t.name + " (#{EquipmentType.find(t.id).equipment.count})" }
     end

@@ -1,15 +1,18 @@
 <li>
-	<fieldset>
-	  <%= f.select :meal_type, options_for_select(MealType::OPTIONS) %>
-	  <%= link_to "x", '#', class: "remove_fields" %>
-	 	<ul>
-	  <%= f.fields_for :meal_products do |builder| %>
-	    <%= render 'meal_product_fields', f: builder %>
-	  <% end %>
-		</ul>
-		<!--a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal" class="openAddProduct">Add Product</a-->
-		<!--%= link_to_add_fields "Add product meal", f, :meal_products %-->
-		<span class="new_product_field"><%= link_to_add_fields "Add product", f, :meal_products %></span>
-		<%= link_to "Add Product", '#', class: "addProductModalOpen" %>
-	</fieldset>
+	<ul>
+		<fieldset>
+			<%= link_to '#', class: "remove_fields" do %>
+		  	<i class="icon-remove"></i>
+		  <% end %>
+		  <%= f.select :meal_type, options_for_select(MealType::OPTIONS, :selected => f.object.meal_type), {}, :class => 'select_meal_type' %>
+		  <br/>
+		  <%= f.fields_for :meal_products do |builder| %>
+		    <%= render 'meal_product_fields', f: builder %>
+		  <% end %>
+			<!--a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal" class="openAddProduct">Add Product</a-->
+			<!--%= link_to_add_fields "Add product meal", f, :meal_products %-->
+			<span class="new_product_field"><%= link_to_add_fields "Add product", f, :meal_products %></span>
+			<%= link_to I18n.t('add_product'), '#', class: "btn addProductModalOpen" %>
+		</fieldset>
+	</ul>
 </li>
