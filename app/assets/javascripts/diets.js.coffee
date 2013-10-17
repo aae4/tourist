@@ -35,9 +35,23 @@ jQuery ->
  		$(this).parent().find('.new_product_field').addClass('active')
  		event.preventDefault()
 
- 	$('.product_weight_field').change ->
- 		alert($(this).parent().parent().find('.pkcals').text())
+$.fn.updateProductWeight =->
+ 	$('.product_weight_field').keyup ->
+    ckals_div = $(this).parent().parent().find('.pkcals')
+    ckals = $(this).val()*$(this).attr("kcals")/100
+    ckals_div.text(Math.round(ckals*100)/100)
 
+    proteins_div = $(this).parent().parent().find('.pproteins')
+    proteins = $(this).val()*$(this).attr("proteins")/100
+    proteins_div.text(Math.round(proteins*100)/100)
+
+    fats_div = $(this).parent().parent().find('.pfats')
+    fats = $(this).val()*$(this).attr("fats")/100
+    fats_div.text(Math.round(fats*100)/100)
+
+    carbohydrates_div = $(this).parent().parent().find('.pcarbohydrates')
+    carbohydrates = $(this).val()*$(this).attr("carbohydrates")/100
+    carbohydrates_div.text(Math.round(carbohydrates*100)/100)
 
 $.fn.loadProductsAutoomplete =->
   $( ".product_search2" ).autocomplete

@@ -9,6 +9,13 @@
 	  			<i class="icon-remove"></i>
 	  		<% end %>
 	  	</div>
+	  	<% if f.object.product != nil %>
+	  		<% name = f.object.product.name %>
+	  		<% kcals = f.object.product.kcals %>
+	  		<% proteins = f.object.product.proteins %>
+	  		<% fats = f.object.product.fats %>
+	  		<% carbohydrates = f.object.product.carbohydrates %>
+	  	<% end %>
 	  	<div class="pname pcol_big">
 	  		<%= f.object.product.name if f.object.product != nil %>
 	  	</div>
@@ -25,8 +32,11 @@
 	  		<%= f.object.product.carbohydrates if f.object.product != nil %>
 	  	</div>
 	  	<div class="pweight pcol_medium">
-	  		<%= f.text_field :product_weight, :class => "product_weight_field" %>
+	  		<%= f.text_field :product_weight, :class => "product_weight_field", :kcals=> kcals, :proteins=>proteins, :fats=>fats, :carbohydrates=> carbohydrates %>
 	  	</div>
+	  	<script>
+	  		$.fn.updateProductWeight();
+	  	</script>
 	  </div>
 	</fieldset>
 </li>
