@@ -1,0 +1,31 @@
+$('#addProductModal').html("<%= escape_javascript(render :partial => 'add_product_modal', :locals => {:product_types => @product_types}) %>")
+
+turnOnListExpand();
+
+$.fn.chooseProductActions();
+$.widget( "custom.prodcomplete", $.ui.autocomplete, {
+  _renderMenu: function( ul, items ) {
+    var that = this,
+      currentCategory = "";
+    $.each( items, function( index, item ) {
+      if ( item.category != currentCategory ) {
+        ul.append( "<li class='ui-autocomplete-product'>" + item.category + "</li>" );
+        currentCategory = item.category;
+      }
+      that._renderItemData( ul, item );
+    });
+  }
+});
+
+$( ".product_search" ).prodcomplete({
+	delay:0,
+  source: "/products/suggestions",
+  open: function(){
+      $(this).prodcomplete( "widget" ).addClass("productModal")
+      return false;
+  },
+  select: function(event, ui){
+		$('li[name="' + ui.item.label + '"]').find('a').click()
+  }
+});
+$('#addProductModal').modal('show');

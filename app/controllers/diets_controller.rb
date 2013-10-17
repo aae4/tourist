@@ -37,8 +37,21 @@ class DietsController < ApplicationController
   	@diet = Diet.find(params[:id])
   end
 
+  def destroy
+    @diet = Diet.find(params[:id])
+    @diet.destroy
+    flash[:notice] = "Successfully destroyed diet."
+    redirect_to diets_url
+  end
+
+  def get_products
+    @products = Product.all
+    @product_types = ProductType.all
+    render "get_products"
+  end
+
   private
     def diet_params
-      params.require(:diet).permit(:name, :user_id, :walk_id, days_attributes: [:id, :name,  meal_types_attributes: [:id, :name, :meal_type, meal_products_attributes: [:id, :product_id, :product_weight, :meal_type_id]] ])
+      params.require(:diet).permit(:name, :user_id, :walk_id, days_attributes: [:id, :name, :_destroy, meal_types_attributes: [:id, :name, :meal_type, :_destroy, meal_products_attributes: [:id, :product_id, :product_weight, :meal_type_id, :_destroy]] ])
     end
 end

@@ -8,3 +8,7 @@ ru:
   dinner: Ужин
   nosh: Перекус
   handheld: Карманное питание
+  diet:
+    actions:
+      edit: Редактировать раскладку
+      remove: Удалить раскладку

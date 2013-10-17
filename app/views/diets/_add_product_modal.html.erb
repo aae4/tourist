@@ -1,4 +1,4 @@
-<div class="add-product-modal modal hide fade modal-medium" id="addProductModal">
+<!--div class="add-product-modal modal hide fade modal-medium" id="addProductModal"-->
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top:20px">×</button>
     <div class="addProductModal_content">
         <div class="listControl">
@@ -6,61 +6,65 @@
           <a id="collapseList">Collapse All</a>
           <div class="pull-right">
             <%= form_tag %>
-            <%= text_field_tag :term, "", :class => "product_search" %>  <i class="icon-search"></i>
+            <div class="productModalAutocomplete">
+              <p style="font-size: 14px;font-family: cursive;">Поиск по наименованию:</p>
+              <%= text_field_tag :term, "", :class => "product_search" %>  <i class="icon-search"></i>
+            </div>
           </div>
-          <input id="cc" name="dept" value="01">
         </div>
 
         <div id="modal_search">
         </div>
 
-        <div id="listContainer">
-          <div class="product_columns">
-            <div class="product_column_big">Наименование</div>
-            <div class="product_column_small">ККал.</div>
-            <div class="product_column_small">Белки</div>
-            <div class="product_column_small">Жиры</div>
-            <div class="product_column_small">Углеводы</div>
-            <div class="product_column_big">Действия</div>
+        <div class="products-list-overflow">
+          <div id="listContainer">
+            <div class="product_columns">
+              <div class="product_column_big">Наименование</div>
+              <div class="product_column_small">ККал.</div>
+              <div class="product_column_small">Белки</div>
+              <div class="product_column_small">Жиры</div>
+              <div class="product_column_small">Углеводы</div>
+              <div class="product_column_big">Действия</div>
+            </div>
+            <hr>
+            <ul id="expList">
+              <% for product_type in @product_types %>
+                <li><%= product_type.name %>
+                  <ul>
+                    <% for product in product_type.products %>
+                      <li name="<%= product.name %>">
+                        <small>
+                        <div class="product_columns" pid="<%=product.id%>" pname="<%=product.name%>" pkcals="<%=product.kcals%>" pproteins="<%=product.proteins%>" pfats="<%=product.fats%>" pcarbohydrates="<%= product.carbohydrates%>">
+                          <div class="product_column_big">
+                            <%= product.name %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.kcals %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.proteins %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.fats %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.carbohydrates %>
+                          </div>
+                          <div class="product_column_big">
+                            <%= link_to '#', class: "choose_product" do %>
+                              <i class="icon-plus"></i>
+                            <% end %>
+                          </div>
+                        </div>
+                      </li>
+                    </small>
+                      <hr>
+                    <% end %>
+                  </ul>
+                </li>
+               <% end %>
+            </ul>
           </div>
-          <hr>
-          <ul id="expList">
-            <% for product_type in ProductType.all %>
-              <li><%= product_type.name %>
-                <ul>
-                  <% for product in product_type.products %>
-                    <li>
-                      <small>
-                      <div class="product_columns" pid="<%=product.id%>" pname="<%=product.name%>" pkcals="<%=product.kcals%>" pproteins="<%=product.proteins%>" pfats="<%=product.fats%>" pcarbohydrates="<%= product.carbohydrates%>">
-                        <div class="product_column_big">
-                          <%= product.name %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.kcals %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.proteins %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.fats %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.carbohydrates %>
-                        </div>
-                        <div class="product_column_big">
-                          <%= link_to '#', class: "choose_product" do %>
-                            <i class="icon-plus"></i>
-                          <% end %>
-                        </div>
-                      </div>
-                    </li>
-                  </small>
-                    <hr>
-                  <% end %>
-                </ul>
-              </li>
-             <% end %>
-          </ul>
         </div>
     </div>
-</div>
+<!--/div-->

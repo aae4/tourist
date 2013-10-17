@@ -4,6 +4,7 @@
 	  <%= f.hidden_field :product_id, :class => "product_id_field", :style => "width:10px" %>
 	  <div class="choose_products_list form">
 	  	<div class="pcol_small">
+	  		<%= f.hidden_field :_destroy %>
 	  		<%= link_to '#', class: "remove_fields" do %>
 	  			<i class="icon-remove"></i>
 	  		<% end %>

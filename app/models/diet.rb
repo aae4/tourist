@@ -2,7 +2,7 @@ class Diet < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :walk
 	has_and_belongs_to_many :days
-	accepts_nested_attributes_for :days
+	accepts_nested_attributes_for :days, allow_destroy: true
 
 	def self.find_by_params(params)
 		diet = Diet.all

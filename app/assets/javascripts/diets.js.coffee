@@ -6,7 +6,7 @@ jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
     #$(this).closest('fieldset').hide()
-    $(this).closest('fieldset').remove()
+    $(this).closest('li').hide()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->
@@ -35,9 +35,15 @@ jQuery ->
  		$(this).parent().find('.new_product_field').addClass('active')
  		event.preventDefault()
 
-$ ->
-  $( ".product_search" ).autocomplete
-    minLength: 0
+ 	$('.product_weight_field').change ->
+ 		alert($(this).parent().parent().find('.pkcals').text())
+
+
+$.fn.loadProductsAutoomplete =->
+  $( ".product_search2" ).autocomplete
+    minLength: 0,
+    open:->
+     $(this).data("ui-autocomplete").menu.element.addClass("productModal");
     source: (request, response) ->
       $.ajax
         url: "/products/suggestions"
@@ -52,3 +58,17 @@ $ ->
         url: "/product/get_by_id"
         data:
           type: ui.item.id
+
+$.fn.chooseProductActions =->
+  $('.choose_product').click ->
+  	$('.new_product_field.active .add_fields').click()
+
+  	$('.new_product_field.active .pname').last().text($(this).parent().parent().attr('pname'))
+  	$('.new_product_field.active .pkcals').last().text($(this).parent().parent().attr('pkcals'))
+  	$('.new_product_field.active .pproteins').last().text($(this).parent().parent().attr('pproteins'))
+  	$('.new_product_field.active .pfats').last().text($(this).parent().parent().attr('pfats'))
+  	$('.new_product_field.active .pcarbohydrates').last().text($(this).parent().parent().attr('pcarbohydrates'))
+  	$('.new_product_field.active .product_id_field').last().val($(this).parent().parent().attr('pid'))
+
+  	$('#addProductModal').modal('hide')
+  	$('.new_product_field.active').removeClass('active')

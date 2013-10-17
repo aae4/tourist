@@ -1,6 +1,7 @@
 <li>
 	<ul>
 		<fieldset>
+			<%= f.hidden_field :_destroy %>
 			<%= link_to '#', class: "remove_fields" do %>
 		  	<i class="icon-remove"></i>
 		  <% end %>
@@ -12,7 +13,8 @@
 			<!--a data-dismiss="modal" data-toggle="modal" data-target="#addProductModal" class="openAddProduct">Add Product</a-->
 			<!--%= link_to_add_fields "Add product meal", f, :meal_products %-->
 			<span class="new_product_field"><%= link_to_add_fields "Add product", f, :meal_products %></span>
-			<%= link_to I18n.t('add_product'), '#', class: "btn addProductModalOpen" %>
+			<!--%= link_to I18n.t('add_product'), '#', class: "btn addProductModalOpen" %-->
+			<%= link_to I18n.t('add_product'), diets_get_products_path, :remote => true, class: "btn addProductModalOpen" %>
 		</fieldset>
 	</ul>
 </li>

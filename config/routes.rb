@@ -20,6 +20,8 @@ Tourist::Application.routes.draw do
   get "products/suggestions"
   get "product/get_by_type"
 
+  get "diets/get_products"
+
   #devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

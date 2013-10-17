@@ -1,7 +1,15 @@
 <div class="diet dietListContainer">
 	<h2><p><%= @diet.name %></p></h2>
 	<small><%= @diet.walk.name if @diet.walk %> <%= @diet.user.email %></small>
-	<hr/>
+
+	<div class="diet_actions">
+		<%= link_to edit_diet_path(@diet) do %>
+			<%= image_tag("walk_components/edit_diet.png", :title => I18n.t('diet.actions.edit')) %>
+		<% end %>
+		<%= link_to @diet, :confirm => 'Are you sure?', :method => :delete do %>
+			<%= image_tag("walk_components/remove_diet.png",:title => I18n.t('diet.actions.remove')) %>
+		<% end %>
+	</div>
 
   <div class="choose_products_list header">
     <div class="pcol_big">Наименование</div>
@@ -12,7 +20,7 @@
     <div class="pcol_medium">Вес/Грамм</div>
   </div>
 
-	<ul id="dietExpList">
+	<ul id="dietExpList" class="expandable">
 	<% @diet.days.each do |day| %>
 		<li>
 		<%= day.name %><br/>
