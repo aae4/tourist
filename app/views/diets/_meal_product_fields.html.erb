@@ -1,7 +1,11 @@
 <li>
 	<fieldset class="products_set">
 	  <span class="product_weight setValue"></span>
-	  <%= f.hidden_field :product_id, :class => "product_id_field", :style => "width:10px" %>
+	  <%= f.hidden_field :product_id, :class => "product_id_field" %>
+	  <!--%= f.hidden_field :kcals, :class => "product_kcals_field" %-->
+	  <!--%= f.hidden_field :proteins, :class => "product_proteins_field" %-->
+	  <!--%= f.hidden_field :fats, :class => "product_fats_field" %-->
+	  <!--%= f.hidden_field :carbohydrates, :class => "product_carbohydrates_field" %-->
 	  <div class="choose_products_list form">
 	  	<div class="pcol_small">
 	  		<%= f.hidden_field :_destroy %>
@@ -15,15 +19,16 @@
 	  		<% proteins = f.object.product.proteins %>
 	  		<% fats = f.object.product.fats %>
 	  		<% carbohydrates = f.object.product.carbohydrates %>
+	  		<% weight = f.object.product_weight %>
 	  	<% end %>
 	  	<div class="pname pcol_big">
 	  		<%= f.object.product.name if f.object.product != nil %>
 	  	</div>
 	  	<div class="pkcals pcol_medium">
-	  		<%= f.object.product.kcals if f.object.product != nil %>
+	  		<%= f.object.product.kcals.to_i*weight/100.0 if f.object.product != nil %>
 	  	</div>
 	  	<div class="pproteins pcol_medium">
-	  		<%= f.object.product.proteins if f.object.product != nil %>
+	  		<%= f.object.product.proteins.to_i*weight/100.0 if f.object.product != nil %>
 	  	</div>
 	  	<div class="pfats pcol_medium">
 	  		<%= f.object.product.fats if f.object.product != nil %>
@@ -32,7 +37,7 @@
 	  		<%= f.object.product.carbohydrates if f.object.product != nil %>
 	  	</div>
 	  	<div class="pweight pcol_medium">
-	  		<%= f.text_field :product_weight, :class => "product_weight_field", :kcals=> kcals, :proteins=>proteins, :fats=>fats, :carbohydrates=> carbohydrates %>
+	  		<%= f.text_field :product_weight, :class => "product_weight_field", :kcals=> kcals, :proteins=>proteins, :fats=>fats, :carbohydrates=> carbohydrates, :onkeypress =>"return inputOnlyNumbers(event)" %>
 	  	</div>
 	  	<script>
 	  		$.fn.updateProductWeight();

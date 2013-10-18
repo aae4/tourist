@@ -29,27 +29,28 @@
 					<li>
 						<%= I18n.t("#{meal_type.meal_type}") %>
 						<ul>
-							<% meal_type.products.each do |product| %>
+							<% meal_type.meal_products.each do |meal_product| %>
+								<% product = Product.find(meal_product.product_id) %>
+								<% weight = meal_product.product_weight %>
 								<li>
 									<div class="choose_products_list show">
 								  	<div class="pcol_big">
 								  		<%= product.name %>
 								  	</div>
 								  	<div class="pcol_medium">
-								  		<%= product.kcals %>
+								  		<%= product.kcals.to_i*weight/100.0 %>
 								  	</div>
 								  	<div class="pcol_medium">
-								  		<%= product.proteins %>
+								  		<%= product.proteins.to_i*weight/100.0 %>
 								  	</div>
 								  	<div class="pcol_medium">
-								  		<%= product.fats %>
+								  		<%= product.fats.to_i*weight/100.0 %>
 								  	</div>
 								  	<div class="pcol_medium">
-								  		<%= product.carbohydrates %>
+								  		<%= product.carbohydrates.to_i*weight/100.0 %>
 								  	</div>
 								  	<div class="pcol_medium">
-								  		<!--%= MealProduct.find_by_product_id(product.id).id %-->
-								  		<%= MealProduct.find_by_product_id(product.id).product_weight %>
+								  		<%= weight %>
 								  	</div>
 							  	</div>
 								</li>

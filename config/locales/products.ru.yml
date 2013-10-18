@@ -1,0 +1,7 @@
+ru:
+  product:
+    name: "Наименование"
+    kcals: "ККал."
+    proteins: "Белки"
+    fats: "Жиры"
+    carbohydrates: "Углеводы"

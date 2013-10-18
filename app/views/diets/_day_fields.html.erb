@@ -2,7 +2,7 @@
 	<ul>
 		<fieldset class="days_set">
 		  <!--%= f.text_field :name %-->
-		  <%= f.hidden_field :_destroy %>
+		  <%= f.hidden_field :_destroy, :class=>"diet_day_delete" %>
 		 	<%= link_to '#', class: "remove_fields" do %>
 		  	<i class="icon-remove"></i>
 		  <% end %>

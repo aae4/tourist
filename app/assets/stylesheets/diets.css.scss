@@ -54,15 +54,11 @@ Diet Compose Table List style
     background-color:#121212;
 }
 #dietExpList li {
-  line-height:100%;
+  #line-height:100%;
   text-indent:0px;
   background-position: 1px 8px;
   padding-left: 20px;
   background-repeat: no-repeat;
-}
-
-#dietExpList.expandable li{
-	/*height:20px;*/
 }
 
 #dietExpList li ul{
@@ -75,7 +71,7 @@ Diet Compose Table List style
  
 /* Collapsed state for list element */
 #dietExpList .collapsed {
-    background-image: url(list_components/collapsed.png);
+  background-image: url(list_components/collapsed.png);
 }
 /* Expanded state for list element
 /* NOTE: This class must be located UNDER the collapsed one */
@@ -110,6 +106,7 @@ DIet Products Chooose Table
   padding:0px;
 	padding-left: 100px;
 }
+
 .choose_products_list.form-header div{
   padding:0px;
 }
@@ -231,7 +228,10 @@ DIet Products Chooose Table
 	width:25px;
 	height:25px;
 }
-
+/*
+Find products by name in modal popup window
+when adding product to Diet autocomplete style
+*/
 .ui-autocomplete.productModal{
 	z-index: 1051;
 	position: fixed;
@@ -249,3 +249,5 @@ DIet Products Chooose Table
 }
 
 .ui-helper-hidden-accessible{display:none}
+
+.productModalAutocomplete.search_by_name{font-size: 14px;font-family:cursive;}

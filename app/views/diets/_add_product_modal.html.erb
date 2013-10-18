@@ -7,7 +7,7 @@
           <div class="pull-right">
             <%= form_tag %>
             <div class="productModalAutocomplete">
-              <p style="font-size: 14px;font-family: cursive;">Поиск по наименованию:</p>
+              <p class="search_by_name"><%= I18n.t("search_by_name")%></p>
               <%= text_field_tag :term, "", :class => "product_search" %>  <i class="icon-search"></i>
             </div>
           </div>
@@ -19,12 +19,12 @@
         <div class="products-list-overflow">
           <div id="listContainer">
             <div class="product_columns">
-              <div class="product_column_big">Наименование</div>
-              <div class="product_column_small">ККал.</div>
-              <div class="product_column_small">Белки</div>
-              <div class="product_column_small">Жиры</div>
-              <div class="product_column_small">Углеводы</div>
-              <div class="product_column_big">Действия</div>
+              <div class="product_column_big"><%= I18n.t("product.name") %></div>
+              <div class="product_column_small"><%= I18n.t("product.kcals") %></div>
+              <div class="product_column_small"><%= I18n.t("product.proteins") %></div>
+              <div class="product_column_small"><%= I18n.t("product.fats") %></div>
+              <div class="product_column_small"><%= I18n.t("product.carbohydrates") %></div>
+              <div class="product_column_big"><%= I18n.t("actions") %></div>
             </div>
             <hr>
             <ul id="expList">

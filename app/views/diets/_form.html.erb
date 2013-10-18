@@ -8,8 +8,24 @@
       <!--%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %-->
       <h2><p>Общая информация</p></h2>
       Название: 
-      <%= f.text_field :name,  :placeholder => "name", class: 'span4'%>
+      <!--%= f.text_field :name,  :placeholder => "name", class: 'span4'%-->
+      <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span4' } %>
     </div>
+    <!--%= select_tag :choose_diet, options_for_select(Diet.all.map{|d| [d.name, d.id]}, {:include_blank => true}), :onchange=>"document.location.reload()" %-->
+    <!--%= select_tag :choose_diet, options_for_select(Diet.all.collect { |d| [d.name, d.id, {:selected => params[:example_diet], :class =>"span4" }]}),:include_blank => true, :onchange=>"window.location.search += '&example_diet=' + this.value" %-->
+
+    <div class="dropdown btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          Choose existing Diet
+          <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+          <% Diet.all.each do |diet| %>
+            <li><%= link_to diet.name, edit_diet_path(diet, :walk_id => params[:walk_id], :edit_as_new => 1) %></li>
+          <% end %>
+      </ul>
+    </div>
+
     <hr>
 
     <div id="dietListContainer">
@@ -34,7 +50,13 @@
     </div>
 
     <div class="form-inline">
-      <%= f.submit "Create", :class => "btn btn-success pull-right"%>
+      <!--%= f.submit "Create", :class => "btn btn-success pull-right"%-->
+        <% if params[:edit_as_new] == "1" %>
+          <%= f.submit "Save", :name => 'edit_as_new', :class => "btn btn-success pull-right" %>
+        <% else %>
+          <!--%= f.submit "Create", :class => "btn btn-success pull-right"%-->
+          <%= f.submit "Save", :class => "btn btn-success pull-right"%>
+        <% end %>
       <%= link_to "diets list", diets_path, :class => "btn" %>
     </div>
 

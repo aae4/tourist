@@ -28,12 +28,12 @@ jQuery ->
   	$('.new_product_field.active .product_id_field').last().val($(this).parent().parent().attr('pid'))
 
   	$('#addProductModal').modal('hide')
-  	$('.new_product_field.active').removeClass('active')
+  	#$('.new_product_field.active').removeClass('active')
 
  	$('form').on 'click', '.addProductModalOpen', (event) ->
- 		$('#addProductModal').modal('show')
+ 		#$('#addProductModal').modal('show')
  		$(this).parent().find('.new_product_field').addClass('active')
- 		event.preventDefault()
+ 		#event.preventDefault()
 
 $.fn.updateProductWeight =->
  	$('.product_weight_field').keyup ->
@@ -83,6 +83,11 @@ $.fn.chooseProductActions =->
   	$('.new_product_field.active .pfats').last().text($(this).parent().parent().attr('pfats'))
   	$('.new_product_field.active .pcarbohydrates').last().text($(this).parent().parent().attr('pcarbohydrates'))
   	$('.new_product_field.active .product_id_field').last().val($(this).parent().parent().attr('pid'))
+
+  	$('.new_product_field.active .product_weight_field').last().attr("kcals", $(this).parent().parent().attr('pkcals'))
+  	$('.new_product_field.active .product_weight_field').last().attr("proteins", $(this).parent().parent().attr('pproteins'))
+  	$('.new_product_field.active .product_weight_field').last().attr("fats", $(this).parent().parent().attr('pfats'))
+  	$('.new_product_field.active .product_weight_field').last().attr("carbohydrates", $(this).parent().parent().attr('pcarbohydrates'))
 
   	$('#addProductModal').modal('hide')
   	$('.new_product_field.active').removeClass('active')

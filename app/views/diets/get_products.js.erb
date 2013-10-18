@@ -19,6 +19,7 @@ $.widget( "custom.prodcomplete", $.ui.autocomplete, {
 
 $( ".product_search" ).prodcomplete({
 	delay:0,
+	minLength: 0,
   source: "/products/suggestions",
   open: function(){
       $(this).prodcomplete( "widget" ).addClass("productModal")
