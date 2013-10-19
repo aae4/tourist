@@ -68,6 +68,8 @@ class DietsController < ApplicationController
 
   def show
   	@diet = Diet.find(params[:id])
+    @comments = @diet.comments
+    @new_comment = Comment.new(:commentable => @diet, :comment => "", :user => current_user)
   end
 
   def destroy

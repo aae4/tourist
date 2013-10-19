@@ -12,3 +12,4 @@ ru:
     actions:
       edit: Редактировать раскладку
       remove: Удалить раскладку
+      choose_existing_diet: Взять за основу

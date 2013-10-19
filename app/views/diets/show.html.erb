@@ -63,3 +63,7 @@
 	<% end %>
 	</ul>
 </div>
+<%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+<% if user_signed_in? %>
+	<%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
+<% end %>

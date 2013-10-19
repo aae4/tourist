@@ -1,6 +1,8 @@
 class Diet < ActiveRecord::Base
 	validates_presence_of :name
 	validates_uniqueness_of :name
+
+	acts_as_commentable
 	
 	belongs_to :user
 	belongs_to :walk
