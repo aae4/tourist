@@ -6,7 +6,7 @@
     <% end %>
 
     <div  class="">
-      <%= f.input :name, label: false, :placeholder => "name", input_html: { class: 'span10' } %>
+      <%= f.input :name, label: false, :placeholder => t(".name"), input_html: { class: 'span10' } %>
     </div>
 
     <div  class="">
@@ -14,8 +14,8 @@
     </div>
 
     <div class="form-inline">
-      <%= f.submit "Create", :class => "btn btn-success pull-right"%>
-      <%= link_to "Discussions list", discussions_path, :class => "btn" %>
+      <%= f.submit t(".save"), :class => "btn btn-success pull-right"%>
+      <%= link_to t(".discussions_list"), discussions_path, :class => "btn" %>
     </div>
   </div>
 <% end %>

@@ -1,0 +1,8 @@
+ru:
+  discussions:
+    index:
+      new_discussion: Новое обсуждение
+    form:
+      name: Название
+      save: Сохранить
+      discussions_list: К списку обсуждений

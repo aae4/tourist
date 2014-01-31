@@ -6,19 +6,19 @@
 	<div class="component-buttons">
 		<div class="component-button">
 			<%= link_to image_tag('walk_components/Clothing-and-gear.png'), new_equipment_set_path(:walk_id => @walk.id) %>
-			<p><small><%= link_to "Total #{@walk.equipment_sets.count} sets proposed", equipment_sets_path(:walk_id => @walk.id) %></small></p>
+			<p><small><%= link_to "Total sets proposed: #{@walk.equipment_sets.count} ", equipment_sets_path(:walk_id => @walk.id) %></small></p>
 		</div>
 		<div class="component-button">
 			<%= link_to image_tag('walk_components/food-and-water.png'), new_diet_path(:walk_id => @walk.id) %>
-			<p><small><%= link_to "Total #{@walk.diets.count} diets proposed", diets_path(:walk_id => @walk.id) %></small></p>
+			<p><small><%= link_to "Total diets proposed: #{@walk.diets.count}", diets_path(:walk_id => @walk.id) %></small></p>
 		</div>
 		<div class="component-button">
 			<%= link_to image_tag('walk_components/health-and-safety.png'), '#' %>
-			<p><small>Total <%= @walk.equipment_sets.count %> sets proposed</small></p>
+			<p><small>Total sets proposed: <%= @walk.equipment_sets.count %> </small></p>
 		</div>
 		<div class="component-button">
 			<%= link_to image_tag('walk_components/faq.png'), '#' %>
-			<p><small>Total <%= @walk.equipment_sets.count %> sets proposed</small></p>
+			<p><small>Total sets proposed: <%= @walk.equipment_sets.count %> </small></p>
 		</div>
 	</div>
 </div>

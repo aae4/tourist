@@ -5,4 +5,6 @@ class Product < ActiveRecord::Base
 	belongs_to :product_type
 	has_many :meal_products
 	has_many :meal_types, :through => :meal_products
+
+	scope :utkonos, :conditions => [" is_utkonos = 1 "]
 end

@@ -36,8 +36,8 @@
 <div class="product_types">
 </div>
 
-
-<div class="listControl">
+<% if false %>
+        <div class="listControl">
           <a id="expandList">Expand All</a>
           <a id="collapseList">Collapse All</a>
         </div>
@@ -58,28 +58,28 @@
                   <% for product in product_type.products %>
                     <li>
                       <small>
-                      <div class="product_columns">
-                        <div class="product_column_big">
-                          <%= product.name %>
+                        <div class="product_columns">
+                          <div class="product_column_big">
+                            <%= product.name %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.kcals %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.proteins %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.fats %>
+                          </div>
+                          <div class="product_column_small">
+                            <%= product.carbohydrates %>
+                          </div>
+                          <div class="product_column_big">
+                            добавить
+                          </div>
                         </div>
-                        <div class="product_column_small">
-                          <%= product.kcals %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.proteins %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.fats %>
-                        </div>
-                        <div class="product_column_small">
-                          <%= product.carbohydrates %>
-                        </div>
-                        <div class="product_column_big">
-                          добавить
-                        </div>
-                      </div>
+                      </small>
                     </li>
-                  </small>
                     <hr>
                   <% end %>
                 </ul>
@@ -87,3 +87,10 @@
              <% end %>
           </ul>
         </div>
+<% end %>
+
+<ul id='expList'>
+  <% ProductType.utkonos.roots.each do |pt| %>
+    <%= render :partial => 'product_type', :locals => {:product_type => pt} %>
+  <% end %>
+</ul>

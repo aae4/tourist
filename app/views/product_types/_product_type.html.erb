@@ -1,0 +1,34 @@
+<li><%= product_type.name %>
+	<% if !product_type.children.empty? %>
+		<ul>
+			<% product_type.children.each do |child| %>
+				<%=render :partial => 'product_type', :locals => {:product_type => child} %>
+			<% end %>
+		</ul>
+	<% elsif !product_type.products.empty? %>
+	  <ul>
+	    <% for product in product_type.products %>
+	      <li>
+	        <small>
+	          <div class="product_columns">
+	            <div class="product_column_big">
+	              <%= link_to product.name, product.link %>
+	            </div>
+	           	<div class="product_column_big">
+	              <%= product.price %>
+	            </div>
+	           	<div class="product_column_average">
+	           		<!--% page = Nokogiri::HTML(open(product.link)) %-->
+								<a href="#" class="btn btn-success" rel="popover" data-toggle="popover" data-placement="bottom" data-content="<%= product.description %>" title="" data-original-title="Описание">Описание</a>
+	            </div>
+	            <div class="product_column_small">
+	              <img src="http://www.utkonos.ru/images/photo/2001/2001730S.jpg">
+	            </div>
+	          </div>
+	        </small>
+	      </li>
+	      <hr>
+	    <% end %>
+	  </ul>
+	<% end %>
+</li>

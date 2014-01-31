@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015094111) do
+ActiveRecord::Schema.define(version: 20140130091744) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(version: 20131015094111) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_utkonos"
+    t.integer  "parent_id"
   end
 
   create_table "products", force: true do |t|
@@ -131,6 +133,10 @@ ActiveRecord::Schema.define(version: 20131015094111) do
     t.integer  "product_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_utkonos"
+    t.text     "description"
+    t.string   "price"
+    t.string   "link"
   end
 
   create_table "roles", force: true do |t|

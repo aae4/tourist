@@ -3,3 +3,15 @@ ru:
   Water: Водный
   Mountain: Горный
   Ski: Лыжный
+  walks:
+    index:
+      new_walk: Новый поход
+    form:
+      name: Название
+      walks_list: К списку походов
+      save: Сохранить
+    discussions:
+      discussions: Обсуждения
+      new_discussion: Новое обсуждение
+    components:
+      components: Компоненты

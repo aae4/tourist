@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require jquery-fileupload
 //= require twitter/bootstrap
+//= require bootstrap
 //= require i18n
 //= require i18n/translations
 //= require turbolinks

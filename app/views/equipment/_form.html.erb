@@ -18,7 +18,7 @@
 
     <div class="form-inline">
       <%= f.input :image, :as => :file , :label => false, input_html: {:onchange=>"readURL(this);"} %>
-      <img id="img_prev" src="#" alt="your image" />
+      <img id="img_prev" src="<%= f.object.image.url %>" alt="your image" class="equip_img_prev" />
     </div>
 
     <div class="form-inline input-append">
